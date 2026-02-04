@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useState, useEffect, useRef } from "react";
 
 interface Mission {
   id: string;
+  owner_id?: string;
   objective: string;
   status: string;
   flight_plan: string | null;
@@ -18,57 +18,67 @@ interface UseMissionReturn {
   reset: () => void;
 }
 
+// Resolve the backend API base URL (Vite dev proxy or same-origin)
+const API_BASE = import.meta.env.VITE_API_BASE ?? "http://localhost:8080";
+
 export const useMission = (): UseMissionReturn => {
   const [mission, setMission] = useState<Mission | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [missionId, setMissionId] = useState<string | null>(null);
+  const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Subscribe to realtime updates when we have a mission ID
+  // Poll the backend for mission status updates
   useEffect(() => {
-    if (!missionId) return;
+    if (!mission || mission.status === "complete" || mission.status === "failed") {
+      if (pollRef.current) {
+        clearInterval(pollRef.current);
+        pollRef.current = null;
+      }
+      return;
+    }
 
-    const channel = supabase
-      .channel(`mission-${missionId}`)
-      .on(
-        'postgres_changes',
-        {
-          event: 'UPDATE',
-          schema: 'public',
-          table: 'missions',
-          filter: `id=eq.${missionId}`,
-        },
-        (payload) => {
-          console.log('Mission updated:', payload);
-          setMission(payload.new as Mission);
-        }
-      )
-      .subscribe();
+    pollRef.current = setInterval(async () => {
+      try {
+        const res = await fetch(`${API_BASE}/api/missions/${mission.id}`);
+        if (!res.ok) return;
+        const updated: Mission = await res.json();
+        console.log("Mission polled:", updated.status);
+        setMission(updated);
+      } catch {
+        // Network blip — keep polling
+      }
+    }, 2000);
 
     return () => {
-      supabase.removeChannel(channel);
+      if (pollRef.current) {
+        clearInterval(pollRef.current);
+        pollRef.current = null;
+      }
     };
-  }, [missionId]);
+  }, [mission?.id, mission?.status]);
 
   const createMission = async (objective: string) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const { data, error: insertError } = await supabase
-        .from('missions')
-        .insert({ objective })
-        .select()
-        .single();
+      const res = await fetch(`${API_BASE}/api/missions`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ objective }),
+      });
 
-      if (insertError) throw insertError;
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error ?? `Server returned ${res.status}`);
+      }
 
-      console.log('Mission created:', data);
+      const data: Mission = await res.json();
+      console.log("Mission created:", data);
       setMission(data);
-      setMissionId(data.id);
     } catch (err) {
-      console.error('Error creating mission:', err);
-      setError(err instanceof Error ? err.message : 'Failed to create mission');
+      console.error("Error creating mission:", err);
+      setError(err instanceof Error ? err.message : "Failed to create mission");
     } finally {
       setIsLoading(false);
     }
@@ -76,7 +86,6 @@ export const useMission = (): UseMissionReturn => {
 
   const reset = () => {
     setMission(null);
-    setMissionId(null);
     setError(null);
     setIsLoading(false);
   };

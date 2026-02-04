@@ -10,8 +10,8 @@ const Index = () => {
     await createMission(objective);
   };
 
-  // Show card when mission exists AND status is complete
-  const showCard = mission && mission.status === "complete";
+  // Show card when mission exists AND status is complete or failed
+  const showCard = mission && (mission.status === "complete" || mission.status === "failed");
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
@@ -64,8 +64,8 @@ const Index = () => {
 
               <MissionInput onSubmit={handleSubmit} isLoading={isLoading} />
               
-              {/* Pending state indicator */}
-              {mission && mission.status === "pending" && (
+              {/* Pending / processing state indicator */}
+              {mission && (mission.status === "pending" || mission.status === "processing") && (
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}

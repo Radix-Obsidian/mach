@@ -20,6 +20,7 @@ export type Database = {
           created_at: string
           flight_plan: string | null
           id: string
+          owner_id: string
           objective: string
           status: string
         }
@@ -28,6 +29,7 @@ export type Database = {
           created_at?: string
           flight_plan?: string | null
           id?: string
+          owner_id?: string
           objective: string
           status?: string
         }
@@ -36,6 +38,7 @@ export type Database = {
           created_at?: string
           flight_plan?: string | null
           id?: string
+          owner_id?: string
           objective?: string
           status?: string
         }

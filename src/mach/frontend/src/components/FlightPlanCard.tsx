@@ -21,12 +21,14 @@ interface SectionProps {
   icon: React.ReactNode;
   content: string;
   delay: number;
+  accentClass?: string;
+  copyHoverClass?: string;
 }
 
 // Decrypt/scramble effect characters
 const CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
 
-const Section = ({ title, icon, content, delay }: SectionProps) => {
+const Section = ({ title, icon, content, delay, accentClass = "text-primary", copyHoverClass = "hover:text-primary hover:bg-primary/10" }: SectionProps) => {
   const [displayedContent, setDisplayedContent] = useState("");
   const [isComplete, setIsComplete] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -89,7 +91,7 @@ const Section = ({ title, icon, content, delay }: SectionProps) => {
       {/* Section Header */}
       <div className="flex items-center justify-between mb-2">
         <div className="flex items-center gap-2">
-          <span className="text-primary">{icon}</span>
+          <span className={accentClass}>{icon}</span>
           <span className="section-header">{title}</span>
         </div>
         
@@ -99,12 +101,12 @@ const Section = ({ title, icon, content, delay }: SectionProps) => {
           animate={{ opacity: isComplete ? 1 : 0.3 }}
           onClick={handleCopy}
           disabled={!isComplete}
-          className="p-1.5 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200 disabled:cursor-not-allowed"
+          className={`p-1.5 rounded-md text-muted-foreground ${copyHoverClass} transition-all duration-200 disabled:cursor-not-allowed`}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           {copied ? (
-            <Check className="w-4 h-4 text-primary" />
+            <Check className={`w-4 h-4 ${accentClass}`} />
           ) : (
             <Copy className="w-4 h-4" />
           )}
@@ -116,13 +118,46 @@ const Section = ({ title, icon, content, delay }: SectionProps) => {
         <p className="font-body text-sm text-foreground/90 leading-relaxed whitespace-pre-wrap">
           {displayedContent}
           {!isComplete && (
-            <span className="animate-pulse text-primary ml-0.5">▊</span>
+            <span className={`animate-pulse ${accentClass} ml-0.5`}>▊</span>
           )}
         </p>
       </div>
     </motion.div>
   );
 };
+
+type CardVariant = "default" | "rejected";
+
+function deriveVariant(flightPlan: string | null): CardVariant {
+  if (!flightPlan) return "default";
+  if (flightPlan.includes("STATUS: REJECTED")) return "rejected";
+  return "default";
+}
+
+const variantStyles = {
+  default: {
+    border: "border-primary/30",
+    glow: "glow-shadow-intense",
+    dot: "bg-primary",
+    heading: "text-primary",
+    accent: "text-primary",
+    copyHover: "hover:text-primary hover:bg-primary/10",
+    status: "text-primary",
+    resetHover: "hover:text-primary hover:bg-primary/10",
+    pulseDot: "bg-primary/60",
+  },
+  rejected: {
+    border: "border-[#FF2D00]/50",
+    glow: "glow-shadow-rejected",
+    dot: "bg-[#FF2D00]",
+    heading: "text-[#FF2D00]",
+    accent: "text-[#FF2D00]",
+    copyHover: "hover:text-[#FF2D00] hover:bg-[#FF2D00]/10",
+    status: "text-[#FF2D00]",
+    resetHover: "hover:text-[#FF2D00] hover:bg-[#FF2D00]/10",
+    pulseDot: "bg-[#FF2D00]/60",
+  },
+} as const;
 
 const FlightPlanCard = ({ mission, onReset }: FlightPlanCardProps) => {
   const techSpec = mission.flight_plan || `Stack: React + TypeScript, Tailwind CSS, Framer Motion
@@ -132,6 +167,9 @@ Deployment: Vercel Edge Functions`;
 
   const agentPrompt = mission.agent_prompt || `You are an expert developer tasked with building "${mission.objective}". Follow best practices for code organization, implement comprehensive error handling, write clean and maintainable code, and ensure accessibility compliance. Prioritize performance optimization and security measures throughout the development process.`;
 
+  const variant = deriveVariant(mission.flight_plan);
+  const v = variantStyles[variant];
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -139,7 +177,7 @@ Deployment: Vercel Edge Functions`;
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-2xl"
     >
-      <div className="flight-card rounded-2xl border border-primary/30 glow-shadow-intense p-px">
+      <div className={`flight-card rounded-2xl border ${v.border} ${v.glow} p-px`}>
         <div className="rounded-[calc(1rem-1px)] bg-background/95 backdrop-blur-xl p-6">
           {/* Header */}
           <motion.div
@@ -149,17 +187,17 @@ Deployment: Vercel Edge Functions`;
             className="flex items-center justify-between mb-6 pb-4 border-b border-border/30"
           >
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-              <h2 className="text-lg font-semibold tracking-tight text-primary">
+              <div className={`w-2 h-2 rounded-full ${v.dot} animate-pulse`} />
+              <h2 className={`text-lg font-semibold tracking-tight ${v.heading}`}>
                 Flight Plan
               </h2>
             </div>
-            
+
             {/* Reset Button */}
             {onReset && (
               <motion.button
                 onClick={onReset}
-                className="p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200"
+                className={`p-2 rounded-md text-muted-foreground ${v.resetHover} transition-all duration-200`}
                 whileHover={{ scale: 1.05, rotate: -180 }}
                 whileTap={{ scale: 0.95 }}
                 transition={{ duration: 0.3 }}
@@ -176,24 +214,30 @@ Deployment: Vercel Edge Functions`;
               icon={<Target className="w-4 h-4" />}
               content={mission.objective}
               delay={300}
+              accentClass={v.accent}
+              copyHoverClass={v.copyHover}
             />
-            
+
             <div className="border-t border-border/20" />
-            
+
             <Section
               title="TECH SPEC"
               icon={<Cpu className="w-4 h-4" />}
               content={techSpec}
               delay={800}
+              accentClass={v.accent}
+              copyHoverClass={v.copyHover}
             />
-            
+
             <div className="border-t border-border/20" />
-            
+
             <Section
               title="AGENT PROMPT"
               icon={<Terminal className="w-4 h-4" />}
               content={agentPrompt}
               delay={1300}
+              accentClass={v.accent}
+              copyHoverClass={v.copyHover}
             />
           </div>
 
@@ -205,13 +249,16 @@ Deployment: Vercel Edge Functions`;
             className="flex items-center justify-between pt-5 mt-5 border-t border-border/30"
           >
             <span className="font-mono text-xs text-muted-foreground">
-              Status: <span className="text-primary">Ready for execution</span>
+              Status:{" "}
+              <span className={v.status}>
+                {variant === "rejected" ? "Rejected" : "Ready for execution"}
+              </span>
             </span>
             <div className="flex gap-1">
               {[...Array(3)].map((_, i) => (
                 <motion.div
                   key={i}
-                  className="w-1.5 h-1.5 rounded-full bg-primary/60"
+                  className={`w-1.5 h-1.5 rounded-full ${v.pulseDot}`}
                   animate={{ opacity: [0.3, 1, 0.3] }}
                   transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }}
                 />
