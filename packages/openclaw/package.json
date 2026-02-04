@@ -1,0 +1,14 @@
+{
+  "name": "openclaw",
+  "version": "2026.1.30",
+  "description": "Compatibility alias that re-exports the locally checked-out dot workspace package.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./plugin-sdk": "./plugin-sdk/index.js"
+  },
+  "dependencies": {
+    "dot": "workspace:*"
+  }
+}

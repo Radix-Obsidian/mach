@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\\\Users\\\\autre\\\\Downloads\\\\HueyclawMD-main\")",
+      "Bash(dir \"C:\\\\Users\\\\autre\\\\Downloads\\\\HueyclawMD-main\\\\src\")",
+      "Bash(dir \"C:\\\\Users\\\\autre\\\\Downloads\\\\HueyclawMD-main\\\\pnpm-workspace.yaml\")",
+      "Bash(dir \"C:\\\\Users\\\\autre\\\\Downloads\\\\HueyclawMD-main\\\\extensions\")",
+      "Bash(dir \"C:\\\\Users\\\\autre\\\\Downloads\\\\HueyclawMD-main\\\\packages\")",
+      "Bash(dir:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(node --version:*)",
+      "Bash(node --env-file=.env.local --import tsx:*)",
+      "Bash(npm run dev)",
+      "Bash(curl:*)",
+      "Bash(tasklist:*)",
+      "Bash(findstr:*)",
+      "Bash(pnpm build:*)",
+      "Bash(pnpm check:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git reset:*)"
+    ]
+  },
+  "outputStyle": "Learning"
+}
