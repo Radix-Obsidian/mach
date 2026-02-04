@@ -2,6 +2,31 @@
 
 Docs: https://docs.dot.ai
 
+## 2026.2.4 - Mach Consolidation
+
+### Changed
+
+- **MACH:** Merged mach repo into unified monorepo at `src/mach/`
+- **MACH:** Replaced standalone worker with unified server architecture (webhook + polling modes)
+- **MACH:** Added comprehensive documentation at `src/mach/README.md`
+
+### Security
+
+- **CRITICAL:** Rotated exposed Anthropic API key (was hardcoded in `src/mach-worker.ts`)
+- **CRITICAL:** Rotated exposed Supabase service key (was hardcoded in `src/mach-worker.ts`)
+- **Security:** Removed all hardcoded credentials from source files
+
+### Removed
+
+- Legacy `src/mach-worker.ts` (standalone polling approach with hardcoded credentials)
+- `MACH-WORKER-README.md` (obsolete documentation for old approach)
+- `scripts/run-mach-worker.ts` (obsolete runner script)
+
+### Added
+
+- `src/mach/README.md` - Comprehensive documentation for unified architecture
+- `DEPRECATED.md` in original mach folder (archived as backup reference)
+
 ## 2026.2.2
 
 ### Fixes

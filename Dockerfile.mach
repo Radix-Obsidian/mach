@@ -1,0 +1,66 @@
+# Unified Mach Server - Frontend + Worker
+FROM node:22-alpine AS base
+
+# Install pnpm
+RUN corepack enable pnpm
+
+WORKDIR /app
+
+# ============================================
+# Stage 1: Install root dependencies
+# ============================================
+FROM base AS deps
+
+COPY package.json pnpm-lock.yaml ./
+COPY pnpm-workspace.yaml ./
+
+# Install root dependencies (includes tsx, express, etc.)
+RUN pnpm install --frozen-lockfile
+
+# ============================================
+# Stage 2: Build frontend
+# ============================================
+FROM base AS frontend-builder
+
+COPY --from=deps /app/node_modules /app/node_modules
+COPY src/mach/frontend/package.json src/mach/frontend/
+WORKDIR /app/src/mach/frontend
+
+# Install frontend dependencies
+RUN npm install
+
+# Copy frontend source
+COPY src/mach/frontend/ ./
+
+# Build frontend
+RUN npm run build
+
+# ============================================
+# Stage 3: Production image
+# ============================================
+FROM base AS production
+
+# Copy root dependencies
+COPY --from=deps /app/node_modules /app/node_modules
+COPY package.json pnpm-lock.yaml ./
+
+# Copy source code (needed for tsx to run TypeScript)
+COPY src/ ./src/
+COPY tsconfig.json ./
+
+# Copy built frontend
+COPY --from=frontend-builder /app/src/mach/frontend/dist ./dist/mach-frontend/
+
+# Environment
+ENV NODE_ENV=production
+ENV PORT=8080
+
+# Expose port
+EXPOSE 8080
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:8080/api/health', (r) => { process.exit(r.statusCode === 200 ? 0 : 1) }).on('error', () => process.exit(1))"
+
+# Start server
+CMD ["node", "--import", "tsx", "src/mach/server.ts"]

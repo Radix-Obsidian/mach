@@ -47,3 +47,6 @@ export function compareDotVersions(
   }
   return 0;
 }
+
+// Re-export for backwards compatibility with existing imports
+export const compareOpenClawVersions = compareDotVersions;

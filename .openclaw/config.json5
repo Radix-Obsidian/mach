@@ -1,0 +1,34 @@
+{
+  // Minimal OpenClaw configuration for MACH Worker
+  agents: {
+    defaults: {
+      // Configure your preferred model provider
+      model: {
+        primary: {
+          provider: "anthropic",
+          model: "claude-3-5-sonnet-latest"
+        }
+      },
+      workspace: "~/.openclaw/workspace",
+      skipBootstrap: false,
+      thinkingDefault: "medium",
+      verboseDefault: "off"
+    }
+  },
+  
+  // Add your API keys here
+  auth: {
+    profiles: {
+      "anthropic:default": {
+        mode: "token",
+        provider: "anthropic",
+        token: process.env.ANTHROPIC_API_KEY || "YOUR_ANTHROPIC_API_KEY_HERE"
+      },
+      "openai:default": {
+        mode: "token",
+        provider: "openai",
+        token: process.env.OPENAI_API_KEY || "YOUR_OPENAI_API_KEY_HERE"
+      }
+    }
+  }
+}

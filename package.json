@@ -148,7 +148,14 @@
     "tui:dev": "DOT_PROFILE=dev node scripts/run-node.mjs --dev tui",
     "ui:build": "node scripts/ui.js build",
     "ui:dev": "node scripts/ui.js dev",
-    "ui:install": "node scripts/ui.js install"
+    "ui:install": "node scripts/ui.js install",
+    "mach:frontend:install": "cd src/mach/frontend && npm install",
+    "mach:frontend:build": "cd src/mach/frontend && npm run build",
+    "mach:frontend:dev": "cd src/mach/frontend && npm run dev",
+    "mach:backend:dev": "node --import tsx src/mach/server.ts",
+    "mach:build": "npm run mach:frontend:build && mkdir -p dist/mach-frontend && cp -r src/mach/frontend/dist/* dist/mach-frontend/",
+    "mach:dev": "concurrently \"npm run mach:frontend:dev\" \"MACH_POLLING=1 npm run mach:backend:dev\"",
+    "mach:start": "node --import tsx src/mach/server.ts"
   },
   "dependencies": {
     "@agentclientprotocol/sdk": "0.13.1",
@@ -207,6 +214,7 @@
     "@grammyjs/types": "^3.23.0",
     "@lit-labs/signals": "^0.2.0",
     "@lit/context": "^1.1.6",
+    "@supabase/supabase-js": "^2.48.1",
     "@types/express": "^5.0.6",
     "@types/markdown-it": "^14.1.2",
     "@types/node": "^25.2.0",

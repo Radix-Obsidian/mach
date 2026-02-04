@@ -74,6 +74,39 @@ dot agent --message "Ship checklist" --thinking high
 
 Upgrading? [Updating guide](https://docs.dot.ai/install/updating) (and run `dot doctor`).
 
+## MACH: Mission-driven AI Command Hub
+
+**MACH** is a unified server for processing AI missions through the OpenClaw agent framework. It provides webhook and polling modes for real-time mission processing with Supabase integration.
+
+**Location:** `src/mach/`
+
+**Quick links:**
+- [MACH Documentation](src/mach/README.md) - Architecture, deployment, troubleshooting
+- [Deployment Plan](.windsurf/plans/unified-mach-deployment-40e4be.md) - Full deployment guide
+
+**Features:**
+- Real-time webhook processing (Supabase integration)
+- Fallback polling mode for development
+- OpenClaw agent integration for mission processing
+- React dashboard for mission management
+- Production-ready with health monitoring
+
+**Quick start:**
+```bash
+# Configure environment
+cp .env.mach.example .env
+# Add ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_KEY
+
+# Run server
+bun run src/mach/server.ts
+
+# Or build and deploy
+pnpm build
+node dist/mach/server.js
+```
+
+See `src/mach/README.md` for detailed setup, deployment guides, and troubleshooting.
+
 ## Development channels
 
 - **stable**: tagged releases (`vYYYY.M.D` or `vYYYY.M.D-<patch>`), npm dist-tag `latest`.

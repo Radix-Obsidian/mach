@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 175 80% 50%;
+    --primary-foreground: 222 47% 6%;
+
+    --secondary: 222 30% 14%;
+    --secondary-foreground: 210 40% 90%;
+
+    --muted: 222 30% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 175 60% 40%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 222 30% 18%;
+    --input: 222 30% 12%;
+    --ring: 175 80% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom glow colors */
+    --glow-primary: 175 80% 50%;
+    --glow-secondary: 200 80% 60%;
+    --glow-tertiary: 260 80% 60%;
+    
+    /* Rejection/Error colors */
+    --rejection: 20 90% 55%;
+    --rejection-foreground: 0 0% 100%;
+    
+    /* Gradient definitions */
+    --gradient-glow: linear-gradient(135deg, hsl(var(--glow-primary)), hsl(var(--glow-secondary)));
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 10%), hsl(222 47% 6%));
+    --gradient-border: linear-gradient(135deg, hsl(var(--glow-primary) / 0.5), hsl(var(--glow-secondary) / 0.3));
+
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 175 80% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 175 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Space Grotesk', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glow-border {
+    position: relative;
+  }
+
+  .glow-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: calc(var(--radius) + 2px);
+    background: var(--gradient-border);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  .glow-border:hover::before,
+  .glow-border.active::before {
+    opacity: 1;
+  }
+
+  .glow-shadow {
+    box-shadow: 
+      0 0 20px hsl(var(--glow-primary) / 0.15),
+      0 0 40px hsl(var(--glow-primary) / 0.1),
+      0 0 80px hsl(var(--glow-primary) / 0.05);
+  }
+
+  .glow-shadow-intense {
+    box-shadow: 
+      0 0 30px hsl(var(--glow-primary) / 0.3),
+      0 0 60px hsl(var(--glow-primary) / 0.2),
+      0 0 100px hsl(var(--glow-primary) / 0.1),
+      inset 0 0 30px hsl(var(--glow-primary) / 0.05);
+  }
+
+  .text-glow {
+    text-shadow: 
+      0 0 10px hsl(var(--glow-primary) / 0.5),
+      0 0 20px hsl(var(--glow-primary) / 0.3),
+      0 0 40px hsl(var(--glow-primary) / 0.2);
+  }
+
+  .section-header {
+    @apply text-xs font-mono uppercase tracking-[0.2em] text-muted-foreground;
+  }
+
+  .flight-card {
+    background: var(--gradient-card);
+  }
+}
+
+@layer utilities {
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-border-glow {
+    animation: border-glow 2s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  .animate-typewriter {
+    animation: typewriter 0.05s steps(1) forwards;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 20px hsl(var(--glow-primary) / 0.2),
+      0 0 40px hsl(var(--glow-primary) / 0.1);
+  }
+  50% {
+    box-shadow: 
+      0 0 30px hsl(var(--glow-primary) / 0.4),
+      0 0 60px hsl(var(--glow-primary) / 0.2),
+      0 0 80px hsl(var(--glow-primary) / 0.1);
+  }
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    border-color: hsl(var(--glow-primary) / 0.3);
+  }
+  50% {
+    border-color: hsl(var(--glow-primary) / 0.6);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  to {
+    opacity: 1;
+  }
+}
