@@ -25,7 +25,6 @@ type Mission = {
   flight_plan?: string;
   agent_prompt?: string;
   created_at: string;
-  updated_at: string;
 };
 
 export async function processMission(id: string, objective: string): Promise<void> {
@@ -41,7 +40,8 @@ export async function processMission(id: string, objective: string): Promise<voi
 
   try {
     // Update status to processing
-    await supabase.from("missions").update({ status: "processing" }).eq("id", id);
+    const { error: procErr } = await supabase.from("missions").update({ status: "processing" }).eq("id", id);
+    if (procErr) console.error("[Mach Worker] ⚠️ Status→processing update failed:", procErr);
 
     // Load OpenClaw config
     const cfg = loadConfig();
@@ -57,7 +57,7 @@ export async function processMission(id: string, objective: string): Promise<voi
     const sessionFile = resolveSessionFilePath(sessionId, undefined, { agentId });
 
     const provider = process.env.MACH_PROVIDER || "anthropic";
-    const model = process.env.MACH_MODEL || "claude-3-5-sonnet-latest";
+    const model = process.env.MACH_MODEL || "claude-sonnet-4-5";
 
     console.log(`[Mach Worker] 🤖 Running agent: ${provider}/${model}`);
 
@@ -92,30 +92,35 @@ export async function processMission(id: string, objective: string): Promise<voi
     const agentPrompt = extractAgentPrompt(flightPlan);
 
     // Update with result
-    await supabase
+    const { error: completeErr } = await supabase
       .from("missions")
       .update({
         status: "complete",
         flight_plan: flightPlan,
         agent_prompt: agentPrompt,
-        updated_at: new Date().toISOString(),
+        // updated_at column may not exist yet; omit to avoid PGRST204
       })
       .eq("id", id);
 
-    console.log(`[Mach Worker] ✅ Mission ${id} complete`);
+    if (completeErr) {
+      console.error("[Mach Worker] ⚠️ Status→complete update failed:", completeErr);
+    } else {
+      console.log(`[Mach Worker] ✅ Mission ${id} complete`);
+    }
   } catch (err) {
     console.error(`[Mach Worker] ❌ Mission ${id} failed:`, err);
 
     const errorMessage = err instanceof Error ? err.message : String(err);
 
-    await supabase
+    const { error: failErr } = await supabase
       .from("missions")
       .update({
         status: "failed",
         flight_plan: `# STATUS: FAILED\n\n# ERROR\n${errorMessage}`,
-        updated_at: new Date().toISOString(),
+        // updated_at column may not exist yet; omit to avoid PGRST204
       })
       .eq("id", id);
+    if (failErr) console.error("[Mach Worker] ⚠️ Status→failed update failed:", failErr);
   }
 }
 
