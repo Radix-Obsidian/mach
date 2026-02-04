@@ -118,3 +118,6 @@ export function ensureDotCliOnPath(opts: EnsureDotPathOpts = {}) {
     process.env.PATH = merged;
   }
 }
+
+/** @deprecated Use ensureDotCliOnPath instead. Kept for backwards compatibility. */
+export const ensureOpenClawCliOnPath = ensureDotCliOnPath;
