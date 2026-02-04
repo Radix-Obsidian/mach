@@ -138,7 +138,7 @@ export function applySessionDefaults(
   const warn = options.warn ?? console.warn;
   const warnState = options.warnState ?? defaultWarnState;
 
-  const next: OpenClawConfig = {
+  const next: DotConfig = {
     ...cfg,
     session: { ...session, mainKey: "main" },
   };

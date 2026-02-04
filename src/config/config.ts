@@ -12,3 +12,6 @@ export * from "./runtime-overrides.js";
 export * from "./types.js";
 export { validateConfigObject, validateConfigObjectWithPlugins } from "./validation.js";
 export { DotSchema } from "./zod-schema.js";
+
+/** @deprecated Use DotSchema instead. Kept for backwards compatibility. */
+export { DotSchema as OpenClawSchema } from "./zod-schema.js";

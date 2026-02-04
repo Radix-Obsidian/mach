@@ -234,7 +234,7 @@ export function createConfigIO(overrides: ConfigIoDeps = {}) {
 
       // Apply config.env to process.env BEFORE substitution so ${VAR} can reference config-defined vars
       if (resolved && typeof resolved === "object" && "env" in resolved) {
-        applyConfigEnv(resolved as OpenClawConfig, deps.env);
+        applyConfigEnv(resolved as DotConfig, deps.env);
       }
 
       // Substitute ${VAR} env var references
@@ -395,7 +395,7 @@ export function createConfigIO(overrides: ConfigIoDeps = {}) {
 
       // Apply config.env to process.env BEFORE substitution so ${VAR} can reference config-defined vars
       if (resolved && typeof resolved === "object" && "env" in resolved) {
-        applyConfigEnv(resolved as OpenClawConfig, deps.env);
+        applyConfigEnv(resolved as DotConfig, deps.env);
       }
 
       // Substitute ${VAR} env var references
