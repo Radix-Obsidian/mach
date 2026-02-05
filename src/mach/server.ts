@@ -6,11 +6,12 @@ import { loadDotEnv } from "../infra/dotenv.js";
 // Load environment variables BEFORE importing modules that read process.env at top-level
 loadDotEnv({ quiet: true });
 
-import { webhookRouter } from "./routes/webhook.js";
+import { deckRouter } from "./routes/deck.js";
+import { documentsRouter } from "./routes/documents.js";
 import { healthRouter } from "./routes/health.js";
 import { missionsRouter } from "./routes/missions.js";
-import { documentsRouter } from "./routes/documents.js";
 import { stripeRouter } from "./routes/stripe.js";
+import { webhookRouter } from "./routes/webhook.js";
 import { startPollingMode } from "./worker.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -57,6 +58,7 @@ app.use("/api", healthRouter);
 app.use("/api", missionsRouter);
 app.use("/api", documentsRouter);
 app.use("/api", stripeRouter);
+app.use("/api", deckRouter);
 
 // Serve landing page static assets (styles.css, script.js, etc.)
 const landingPath = path.join(__dirname, "../../landing");

@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { LogOut, Menu } from "lucide-react";
+import { LogOut, Menu, Zap } from "lucide-react";
 import { useState } from "react";
+import FlightPlanCard from "@/components/FlightPlanCard";
+import MissionInput from "@/components/MissionInput";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -8,8 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import MissionInput from "@/components/MissionInput";
-import FlightPlanCard from "@/components/FlightPlanCard";
 import { UpgradeModal } from "@/components/UpgradeModal";
 import { useMission } from "@/hooks/useMission";
 import { useSession } from "@/hooks/useSession";
@@ -26,11 +26,14 @@ const Index = () => {
     await supabase.auth.signOut();
   };
 
-  const handleSubmit = async (objective: string, options?: {
-    repoUrl?: string;
-    files?: File[];
-    businessContext?: { revenue_model?: string; monthly_revenue?: number; user_count?: number };
-  }) => {
+  const handleSubmit = async (
+    objective: string,
+    options?: {
+      repoUrl?: string;
+      files?: File[];
+      businessContext?: { revenue_model?: string; monthly_revenue?: number; user_count?: number };
+    },
+  ) => {
     // Check quota before creating mission
     if (!canCreateMission()) {
       setShowUpgradeModal(true);
@@ -54,9 +57,14 @@ const Index = () => {
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <div className="px-2 py-1.5 text-sm text-muted-foreground">
-              {session?.user?.email}
-            </div>
+            <div className="px-2 py-1.5 text-sm text-muted-foreground">{session?.user?.email}</div>
+            <a
+              href="/app/deck"
+              className="flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-slate-900 rounded cursor-pointer transition-colors"
+            >
+              <Zap className="w-4 h-4" />
+              Mach Deck
+            </a>
             <a
               href="/app/settings"
               className="flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-slate-900 rounded cursor-pointer transition-colors"
@@ -76,23 +84,23 @@ const Index = () => {
         {/* Gradient orbs */}
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-accent/5 rounded-full blur-3xl" />
-        
+
         {/* Grid pattern */}
-        <div 
+        <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage: `
               linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
               linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)
             `,
-            backgroundSize: '60px 60px'
+            backgroundSize: "60px 60px",
           }}
         />
       </div>
 
       {/* Main content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center p-6">
-      <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait">
           {!showCard ? (
             <motion.div
               key="input"
@@ -131,7 +139,9 @@ const Index = () => {
                   <div className="w-48 h-1 bg-slate-800 rounded-full mt-2 overflow-hidden">
                     <div
                       className="h-full bg-gradient-to-r from-primary to-accent transition-all"
-                      style={{ width: `${Math.min(100, (subscription.missions_used / subscription.missions_quota) * 100)}%` }}
+                      style={{
+                        width: `${Math.min(100, (subscription.missions_used / subscription.missions_quota) * 100)}%`,
+                      }}
                     />
                   </div>
                 </motion.div>

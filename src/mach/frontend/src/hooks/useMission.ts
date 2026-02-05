@@ -49,6 +49,8 @@ export const useMission = (): UseMissionReturn => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const pollRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const failCountRef = useRef(0);
+  const maxPollFailures = 30; // Stop after ~2 minutes of failures
 
   // Poll the backend for mission status updates
   useEffect(() => {
@@ -57,20 +59,42 @@ export const useMission = (): UseMissionReturn => {
         clearInterval(pollRef.current);
         pollRef.current = null;
       }
+      failCountRef.current = 0;
       return;
     }
 
-    pollRef.current = setInterval(async () => {
+    // Backoff: start at 2s, increase on failures (max 10s)
+    const getInterval = () => Math.min(2000 + failCountRef.current * 1000, 10000);
+
+    const poll = async () => {
       try {
-        const res = await fetch(`${API_BASE}/api/missions/${mission.id}`);
-        if (!res.ok) return;
+        const { data: sessionData } = await supabase.auth.getSession();
+        const headers: Record<string, string> = {};
+        if (sessionData?.session?.access_token) {
+          headers["Authorization"] = `Bearer ${sessionData.session.access_token}`;
+        }
+
+        const res = await fetch(`${API_BASE}/api/missions/${mission.id}`, { headers });
+        if (!res.ok) {
+          failCountRef.current++;
+          if (failCountRef.current >= maxPollFailures) {
+            console.warn("[useMission] Polling stopped after too many failures");
+            if (pollRef.current) clearInterval(pollRef.current);
+          }
+          return;
+        }
+        failCountRef.current = 0;
         const updated: Mission = await res.json();
-        console.log("Mission polled:", updated.status);
         setMission(updated);
       } catch {
-        // Network blip — keep polling
+        failCountRef.current++;
+        if (failCountRef.current >= maxPollFailures) {
+          if (pollRef.current) clearInterval(pollRef.current);
+        }
       }
-    }, 2000);
+    };
+
+    pollRef.current = setInterval(poll, getInterval());
 
     return () => {
       if (pollRef.current) {

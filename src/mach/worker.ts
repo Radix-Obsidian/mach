@@ -1,22 +1,28 @@
 import { createClient } from "@supabase/supabase-js";
 import { randomUUID } from "node:crypto";
-import { loadConfig } from "../config/config.js";
-import { runEmbeddedPiAgent } from "../agents/pi-embedded.js";
 import { resolveAgentWorkspaceDir, resolveAgentDir } from "../agents/agent-scope.js";
+import { runEmbeddedPiAgent } from "../agents/pi-embedded.js";
 import { ensureAgentWorkspace } from "../agents/workspace.js";
+import { loadConfig } from "../config/config.js";
 import { resolveSessionFilePath } from "../config/sessions.js";
 
-const SUPABASE_URL = process.env.VITE_SUPABASE_URL;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
-const POLL_INTERVAL_MS = Number(process.env.MACH_POLL_INTERVAL_MS) || 5000;
-
-if (!SUPABASE_URL || !SUPABASE_SERVICE_KEY) {
-  console.warn("[Mach Worker] ⚠️ Supabase credentials not configured");
+// Lazy Supabase init — env vars are loaded by server.ts before first request
+let _supabase: ReturnType<typeof createClient> | null | undefined;
+function getSupabase() {
+  if (_supabase === undefined) {
+    const url = process.env.VITE_SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_KEY;
+    if (!url || !key) {
+      console.warn("[Mach Worker] ⚠️ Supabase credentials not configured");
+      _supabase = null;
+    } else {
+      _supabase = createClient(url, key);
+      console.log("[Mach Worker] ✅ Supabase client initialized");
+    }
+  }
+  return _supabase;
 }
-
-const supabase = SUPABASE_URL && SUPABASE_SERVICE_KEY
-  ? createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY)
-  : null;
+const POLL_INTERVAL_MS = Number(process.env.MACH_POLL_INTERVAL_MS) || 5000;
 
 type Mission = {
   id: string;
@@ -28,6 +34,7 @@ type Mission = {
 };
 
 export async function processMission(id: string, objective: string): Promise<void> {
+  const supabase = getSupabase();
   if (!supabase) {
     throw new Error("Supabase client not configured");
   }
@@ -38,9 +45,20 @@ export async function processMission(id: string, objective: string): Promise<voi
   console.log(`[Mach Worker] 🚀 Processing mission ${id}`);
   console.log(`[Mach Worker] 📋 Objective: ${objective.substring(0, 100)}...`);
 
+  // Fetch mission owner_id for later deck card generation
+  const { data: missionData } = await supabase
+    .from("missions")
+    .select("owner_id")
+    .eq("id", id)
+    .single();
+  const ownerId = missionData?.owner_id;
+
   try {
     // Update status to processing
-    const { error: procErr } = await supabase.from("missions").update({ status: "processing" }).eq("id", id);
+    const { error: procErr } = await supabase
+      .from("missions")
+      .update({ status: "processing" })
+      .eq("id", id);
     if (procErr) console.error("[Mach Worker] ⚠️ Status→processing update failed:", procErr);
 
     // Load OpenClaw config
@@ -107,6 +125,13 @@ export async function processMission(id: string, objective: string): Promise<voi
     } else {
       console.log(`[Mach Worker] ✅ Mission ${id} complete`);
     }
+
+    // Generate Mach Deck cards for completed missions
+    if (ownerId) {
+      await generateDeckCards(id, ownerId, flightPlan, agentPrompt).catch((err) => {
+        console.error("[Mach Worker] ⚠️ Deck card generation failed:", err);
+      });
+    }
   } catch (err) {
     console.error(`[Mach Worker] ❌ Mission ${id} failed:`, err);
 
@@ -130,6 +155,7 @@ function extractAgentPrompt(flightPlan: string): string | undefined {
 }
 
 async function pollAndProcessMissions(): Promise<void> {
+  const supabase = getSupabase();
   if (!supabase) {
     return;
   }
@@ -181,4 +207,180 @@ export function stopPollingMode(): void {
     pollingInterval = null;
     console.log("[Mach Worker] ⏹️ Polling stopped");
   }
+}
+
+// ============================================================================
+// MACH DECK CARD GENERATION
+// ============================================================================
+
+async function generateDeckCards(
+  missionId: string,
+  userId: string,
+  flightPlan: string,
+  agentPrompt?: string,
+): Promise<void> {
+  const supabase = getSupabase();
+  if (!supabase) {
+    return;
+  }
+
+  try {
+    // Get user's canvas instance
+    const { data: canvas, error: canvasError } = await supabase
+      .from("canvas_instances")
+      .select("id")
+      .eq("owner_id", userId)
+      .is("team_id", null)
+      .single();
+
+    if (canvasError && canvasError.code !== "PGRST116") {
+      console.error("[Mach Deck] Canvas fetch error:", canvasError);
+      return;
+    }
+
+    let canvasId = canvas?.id;
+
+    // Create canvas if doesn't exist
+    if (!canvasId) {
+      const { data: newCanvas, error: createError } = await supabase
+        .from("canvas_instances")
+        .insert({ owner_id: userId })
+        .select()
+        .single();
+
+      if (createError || !newCanvas) {
+        console.error("[Mach Deck] Canvas creation failed:", createError);
+        return;
+      }
+      canvasId = newCanvas.id;
+    }
+
+    // Generate A2UI payload
+    const a2uiPayload = buildFlightPlanCardA2UI(flightPlan, agentPrompt);
+
+    // Calculate position (stagger cards to avoid overlap)
+    const { data: existingCards, error: queryError } = await supabase
+      .from("canvas_cards")
+      .select("position_x")
+      .eq("canvas_id", canvasId)
+      .order("created_at", { ascending: false })
+      .limit(1);
+
+    if (queryError) {
+      console.error("[Mach Deck] Position query failed:", queryError);
+      return;
+    }
+
+    const positionX = existingCards?.[0]?.position_x ? existingCards[0].position_x + 450 : 100;
+
+    // Insert card
+    const { data: card, error: insertError } = await supabase
+      .from("canvas_cards")
+      .insert({
+        canvas_id: canvasId,
+        card_type: "avionics_card",
+        position_x: positionX,
+        position_y: 100,
+        a2ui_payload: a2uiPayload,
+        metadata: {
+          mission_id: missionId,
+          card_title: "Flight Plan",
+          confidence_score: 0.95,
+        },
+      })
+      .select()
+      .single();
+
+    if (insertError) {
+      console.error("[Mach Deck] Card insertion failed:", insertError);
+      return;
+    }
+
+    console.log(`[Mach Deck] ✅ Card created for mission ${missionId}: ${card?.id}`);
+  } catch (err) {
+    console.error("[Mach Deck] Unexpected error during card generation:", err);
+  }
+}
+
+function buildFlightPlanCardA2UI(
+  flightPlan: string,
+  agentPrompt?: string,
+): Array<Record<string, unknown>> {
+  const surfaceId = "flight_plan_card";
+  const components: Array<Record<string, unknown>> = [
+    {
+      id: "root",
+      component: {
+        Card: {
+          child: "content_column",
+          padding: { all: 16 },
+        },
+      },
+    },
+    {
+      id: "content_column",
+      component: {
+        Column: {
+          children: { explicitList: ["title", "divider", "flight_plan_text"] },
+          spacing: 12,
+        },
+      },
+    },
+    {
+      id: "title",
+      component: {
+        Text: {
+          text: { literalString: "🚀 Flight Plan" },
+          usageHint: "h3",
+        },
+      },
+    },
+    {
+      id: "divider",
+      component: { Divider: {} },
+    },
+    {
+      id: "flight_plan_text",
+      component: {
+        Text: {
+          text: { literalString: flightPlan },
+          usageHint: "body",
+        },
+      },
+    },
+  ];
+
+  // Add agent prompt section if present
+  if (agentPrompt) {
+    const columnChildren = (components[1].component as Record<string, Record<string, unknown>>)
+      .Column.children as Record<string, unknown[]>;
+    columnChildren.explicitList.push("agent_prompt_title", "agent_prompt_text");
+    components.push(
+      {
+        id: "agent_prompt_title",
+        component: {
+          Text: {
+            text: { literalString: "🤖 Agent Prompt" },
+            usageHint: "h4",
+          },
+        },
+      },
+      {
+        id: "agent_prompt_text",
+        component: {
+          Text: {
+            text: { literalString: agentPrompt },
+            usageHint: "caption",
+          },
+        },
+      },
+    );
+  }
+
+  const payloads = [
+    { surfaceUpdate: { surfaceId, components } },
+    { beginRendering: { surfaceId, root: "root" } },
+  ];
+
+  return payloads;
 }
