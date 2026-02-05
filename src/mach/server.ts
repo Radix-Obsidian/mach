@@ -1,9 +1,16 @@
 import express from "express";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { loadDotEnv } from "../infra/dotenv.js";
+
+// Load environment variables BEFORE importing modules that read process.env at top-level
+loadDotEnv({ quiet: true });
+
 import { webhookRouter } from "./routes/webhook.js";
 import { healthRouter } from "./routes/health.js";
 import { missionsRouter } from "./routes/missions.js";
+import { documentsRouter } from "./routes/documents.js";
+import { stripeRouter } from "./routes/stripe.js";
 import { startPollingMode } from "./worker.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -11,16 +18,24 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-// Middleware
-app.use(express.json());
+// Stripe webhook must receive raw body, so process it before JSON parsing
+app.post("/api/stripe/webhook", express.raw({ type: "application/json" }), (req, res, next) => {
+  // Store raw body for Stripe signature verification
+  (req as any).rawBody = req.body;
+  next();
+});
+
+// Middleware — increased limit for base64 document uploads
+app.use(express.json({ limit: "20mb" }));
 
 // CORS for local dev (Vite runs on a different port)
 app.use((req, res, next) => {
   const origin = req.headers.origin;
   if (origin) {
     res.setHeader("Access-Control-Allow-Origin", origin);
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader("Access-Control-Allow-Credentials", "true");
   }
   if (req.method === "OPTIONS") {
     return res.sendStatus(204);
@@ -40,19 +55,37 @@ app.use((req, _res, next) => {
 app.use("/api", webhookRouter);
 app.use("/api", healthRouter);
 app.use("/api", missionsRouter);
+app.use("/api", documentsRouter);
+app.use("/api", stripeRouter);
 
-// Serve static frontend (built React app)
+// Serve landing page static assets (styles.css, script.js, etc.)
+const landingPath = path.join(__dirname, "../../landing");
+app.use(express.static(landingPath));
+
+// Serve static frontend (built React app) from /app path
 const frontendPath = path.join(__dirname, "static");
-app.use(express.static(frontendPath));
+app.use("/app", express.static(frontendPath));
 
-// SPA fallback - serve index.html for all non-API GET routes
+// Routes: landing page vs SPA
+app.get("/", (req, res) => {
+  // Serve landing page at root
+  res.sendFile(path.join(landingPath, "index.html"));
+});
+
+// Serve React SPA for /app and all /app/* routes
+app.get(/^\/app(\/.*)?$/, (req, res) => {
+  res.sendFile(path.join(frontendPath, "index.html"));
+});
+
+// Fallback: serve landing page for any other GET request (404 alternative)
 app.use((req, res, next) => {
   if (req.method !== "GET" || req.path.startsWith("/api")) {
     next();
     return;
   }
 
-  res.sendFile(path.join(frontendPath, "index.html"));
+  // For any unmatched GET request, serve landing page
+  res.sendFile(path.join(landingPath, "index.html"));
 });
 
 // Start server

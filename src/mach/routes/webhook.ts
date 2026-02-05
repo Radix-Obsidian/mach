@@ -4,11 +4,15 @@ import { processMission } from "../worker.js";
 
 const router = Router();
 
-const WEBHOOK_SECRET = process.env.SUPABASE_WEBHOOK_SECRET;
+// Read lazily at request time — env vars loaded by server.ts before first request
+function getWebhookSecret() {
+  return process.env.SUPABASE_WEBHOOK_SECRET;
+}
 
 function verifyWebhookSignature(signature: string | undefined, body: unknown): boolean {
+  const secret = getWebhookSecret();
   // Skip verification in development or if no secret configured
-  if (process.env.NODE_ENV === "development" || !WEBHOOK_SECRET) {
+  if (process.env.NODE_ENV === "development" || !secret) {
     return true;
   }
 
@@ -19,7 +23,7 @@ function verifyWebhookSignature(signature: string | undefined, body: unknown): b
   try {
     const payload = JSON.stringify(body);
     const expectedSignature = crypto
-      .createHmac("sha256", WEBHOOK_SECRET)
+      .createHmac("sha256", secret)
       .update(payload)
       .digest("hex");
 

@@ -1,0 +1,1429 @@
+
+> dot@2026.1.30 build C:\Users\autre\Downloads\HueyclawMD-main
+> pnpm canvas:a2ui:bundle && tsc -p tsconfig.json --noEmit false && node --import tsx scripts/canvas-a2ui-copy.ts && node --import tsx scripts/copy-hook-metadata.ts && node --import tsx scripts/write-build-info.ts "--reporter" "append-only"
+
+
+> dot@2026.1.30 canvas:a2ui:bundle C:\Users\autre\Downloads\HueyclawMD-main
+> bash scripts/bundle-a2ui.sh
+
+Windows/WSL detected; keeping prebuilt bundle.
+src/acp/client.ts(11,10): error TS2724: '"../infra/path-env.js"' has no exported member named 'ensureOpenClawCliOnPath'. Did you mean 'ensureDotCliOnPath'?
+src/agents/agent-scope.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-health.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/display.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/doctor.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/oauth.ts(8,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/order.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/order.ts(56,54): error TS18046: 'profile' is of type 'unknown'.
+src/agents/auth-profiles/order.ts(62,17): error TS2339: Property 'length' does not exist on type '{}'.
+src/agents/auth-profiles/order.ts(66,30): error TS2339: Property 'filter' does not exist on type '{}'.
+src/agents/auth-profiles/order.ts(66,38): error TS7006: Parameter 'profileId' implicitly has an 'any' type.
+src/agents/auth-profiles/order.ts(118,38): error TS2339: Property 'length' does not exist on type '{}'.
+src/agents/auth-profiles/repair.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/session-override.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/types.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/auth-profiles/usage.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/bootstrap-files.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/bootstrap-hooks.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/cache-trace.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/channel-tools.ts(6,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/cli-backends.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/cli-runner.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/cli-runner/helpers.ts(8,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/context-window-guard.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/identity-avatar.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/identity.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/memory-search.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/model-auth.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/model-auth.ts(38,5): error TS2322: Type 'unknown' is not assignable to type 'ModelProviderConfig | undefined'.
+src/agents/model-auth.ts(40,3): error TS2322: Type 'unknown' is not assignable to type 'ModelProviderConfig | undefined'.
+src/agents/model-catalog.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/model-fallback.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/model-selection.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/models-config.providers.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/models-config.providers.ts(183,39): error TS7006: Parameter 'model' implicitly has an 'any' type.
+src/agents/models-config.providers.ts(214,7): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(215,29): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(215,60): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(219,9): error TS2698: Spread types may only be created from object types.
+src/agents/models-config.providers.ts(220,39): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(227,21): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(227,51): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(228,23): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(230,9): error TS18046: 'normalizedProvider' is of type 'unknown'.
+src/agents/models-config.providers.ts(234,32): error TS2698: Spread types may only be created from object types.
+src/agents/models-config.providers.ts(244,34): error TS2698: Spread types may only be created from object types.
+src/agents/models-config.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/models-config.ts(39,31): error TS7006: Parameter 'model' implicitly has an 'any' type.
+src/agents/openclaw-tools.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-helpers/bootstrap.ts(4,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-helpers/errors.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/compact.ts(10,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/extensions.ts(5,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/extra-params.ts(4,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/history.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/model.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/run/params.ts(4,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/run/payloads.ts(3,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/run/types.ts(5,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-embedded-runner/utils.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-settings.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-tools.policy.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/pi-tools.ts(8,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/sandbox/config.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/sandbox/context.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/sandbox/runtime-status.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/sandbox/tool-policy.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills-install.ts(6,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills-status.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills/config.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills/env-overrides.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills/plugin-skills.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills/refresh.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills/refresh.ts(57,11): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/agents/skills/refresh.ts(59,11): error TS7006: Parameter 'dir' implicitly has an 'any' type.
+src/agents/skills/workspace.ts(8,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/skills/workspace.ts(128,11): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/agents/system-prompt-params.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/timeout.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/agents-list-tool.ts(49,42): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/agents/tools/agents-list-tool.ts(52,20): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/agents/tools/agents-list-tool.ts(53,17): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/agents/tools/agents-list-tool.ts(75,23): error TS2345: Argument of type 'unknown' is not assignable to parameter of type 'string'.
+src/agents/tools/discord-actions.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/gateway-tool.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/image-tool.helpers.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/image-tool.ts(5,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/memory-tool.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/message-tool.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/nodes-tool.ts(4,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/session-status-tool.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/sessions-helpers.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/sessions-helpers.ts(86,32): error TS7006: Parameter 'pattern' implicitly has an 'any' type.
+src/agents/tools/sessions-send-helpers.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/sessions-spawn-tool.ts(149,44): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/agents/tools/sessions-spawn-tool.ts(153,22): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/agents/tools/sessions-spawn-tool.ts(154,19): error TS7006: Parameter 'value' implicitly has an 'any' type.
+src/agents/tools/slack-actions.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/telegram-actions.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/tts-tool.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/web-fetch.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/web-search.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/agents/tools/whatsapp-actions.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/chunk.ts(6,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/command-auth.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/command-detection.ts(1,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/commands-registry.ts(2,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/commands-registry.types.ts(1,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/dispatch.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/envelope.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/inbound-debounce.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/abort.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/agent-runner-memory.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/agent-runner-utils.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/bash-command.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/block-streaming.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/commands-allowlist.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/commands-compact.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/commands-context.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/commands-models.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/commands-status.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/commands-types.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.auth.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.fast-lane.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.impl.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.model-picker.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.model.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.parse.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.persist.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/directive-handling.queue-validation.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/dispatch-from-config.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/get-reply-directives-apply.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/get-reply-directives.ts(4,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/get-reply-directives.ts(187,21): error TS18046: 'entry' is of type 'unknown'.
+src/auto-reply/reply/get-reply-inline-actions.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/get-reply-run.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/get-reply.ts(11,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/groups.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/memory-flush.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/mentions.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/model-selection.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/provider-dispatcher.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/queue/types.ts(3,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/reply-elevated.ts(1,45): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/reply-threading.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/route-reply.ts(10,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/session-reset-model.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/session-updates.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/session.ts(5,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/reply/stage-sandbox-media.ts(5,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/skill-commands.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/auto-reply/status.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/browser/config.ts(1,52): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/browser/profiles-service.ts(3,37): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/dock.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/config-helpers.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/config-writes.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/directory-config.ts(1,15): error TS2305: Module '"../../config/types.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/group-mentions.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/helpers.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/media-limits.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/message-actions.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding-types.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding/discord.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding/discord.ts(235,52): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/channels/plugins/onboarding/discord.ts(258,50): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/channels/plugins/onboarding/imessage.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding/signal.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding/slack.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding/slack.ts(285,52): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/channels/plugins/onboarding/slack.ts(308,50): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/channels/plugins/onboarding/telegram.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding/whatsapp.ts(3,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/onboarding/whatsapp.ts(84,18): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/channels/plugins/onboarding/whatsapp.ts(85,15): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/channels/plugins/onboarding/whatsapp.ts(146,18): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/channels/plugins/onboarding/whatsapp.ts(147,15): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/channels/plugins/pairing.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/setup-helpers.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/status.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/types.adapters.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/types.core.ts(4,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/whatsapp-heartbeat.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/channels/plugins/whatsapp-heartbeat.ts(56,49): error TS7006: Parameter 'v' implicitly has an 'any' type.
+src/channels/reply-prefix.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/cli/hooks-cli.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/cli/plugins-cli.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/cli/program/register.subclis.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/agent/delivery.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/agent/session-store.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/agent/session.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/agents.bindings.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/agents.command-shared.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/agents.config.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/agents.config.ts(186,45): error TS7006: Parameter 'binding' implicitly has an 'any' type.
+src/commands/agents.config.ts(189,39): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/agents.providers.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/auth-choice.apply.plugin-provider.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/auth-choice.apply.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/auth-choice.default-model.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/auth-choice.model-check.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/channels/add-mutators.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/channels/add.ts(6,32): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/channels/capabilities.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/channels/remove.ts(7,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/channels/shared.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/channels/status.ts(6,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/cleanup-utils.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/configure.channels.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/configure.gateway-auth.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/configure.gateway.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/configure.wizard.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/daemon-install-helpers.ts(1,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-auth.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-config-flow.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-config-flow.ts(8,3): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawSchema'.
+src/commands/doctor-gateway-daemon-flow.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-gateway-health.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-gateway-services.ts(6,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-legacy-config.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-platform-notes.ts(6,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-sandbox.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-security.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-state-integrity.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor-workspace-status.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/doctor.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/gateway-status/helpers.ts(1,15): error TS2305: Module '"../../config/types.js"' has no exported member 'OpenClawConfig'.
+src/commands/google-gemini-model-default.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/health.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/model-picker.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/models/aliases.ts(61,31): error TS2339: Property 'alias' does not exist on type '{}'.
+src/commands/models/aliases.ts(90,18): error TS2339: Property 'alias' does not exist on type '{}'.
+src/commands/models/aliases.ts(114,76): error TS2339: Property 'alias' does not exist on type '{}'.
+src/commands/models/auth.ts(19,39): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/models/fallbacks.ts(56,13): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/fallbacks.ts(63,16): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/fallbacks.ts(64,13): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/fallbacks.ts(103,39): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/image-fallbacks.ts(56,13): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/image-fallbacks.ts(63,16): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/image-fallbacks.ts(64,13): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/image-fallbacks.ts(105,39): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/commands/models/list.auth-overview.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/models/list.configured.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/models/list.probe.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/models/list.probe.ts(186,40): error TS2339: Property 'length' does not exist on type '{}'.
+src/commands/models/list.probe.ts(198,47): error TS2339: Property 'includes' does not exist on type '{}'.
+src/commands/models/list.registry.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/models/shared.ts(11,8): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-auth.config-core.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-auth.config-core.ts(150,48): error TS7006: Parameter 'model' implicitly has an 'any' type.
+src/commands/onboard-auth.config-core.ts(259,40): error TS7006: Parameter 'existing' implicitly has an 'any' type.
+src/commands/onboard-auth.config-core.ts(326,48): error TS7006: Parameter 'model' implicitly has an 'any' type.
+src/commands/onboard-auth.config-core.ts(402,61): error TS7006: Parameter 'existing' implicitly has an 'any' type.
+src/commands/onboard-auth.config-core.ts(487,44): error TS7006: Parameter 'profileId' implicitly has an 'any' type.
+src/commands/onboard-auth.config-minimax.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-auth.config-minimax.ts(80,47): error TS7006: Parameter 'model' implicitly has an 'any' type.
+src/commands/onboard-auth.config-minimax.ts(157,44): error TS7006: Parameter 'model' implicitly has an 'any' type.
+src/commands/onboard-auth.config-opencode.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-channels.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-helpers.ts(6,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-hooks.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/api-keys.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/local.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/local/auth-choice.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/local/daemon-install.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/local/gateway-config.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/local/skills-config.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/local/workspace.ts(1,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-non-interactive/remote.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-remote.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboard-skills.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/onboarding/plugin-install.ts(4,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/openai-codex-model-default.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/opencode-zen-model-default.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/sandbox-explain.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/setup.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/status-all/agents.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/status-all/channels.ts(8,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/commands/status.link-channel.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/config/agent-dirs.ts(3,15): error TS2305: Module '"./types.js"' has no exported member 'OpenClawConfig'.
+src/config/agent-dirs.ts(36,18): error TS7006: Parameter 'agent' implicitly has an 'any' type.
+src/config/agent-dirs.ts(65,30): error TS7006: Parameter 'agent' implicitly has an 'any' type.
+src/config/agent-limits.ts(1,15): error TS2305: Module '"./types.js"' has no exported member 'OpenClawConfig'.
+src/config/channel-capabilities.ts(1,15): error TS2305: Module '"./config.js"' has no exported member 'OpenClawConfig'.
+src/config/defaults.ts(141,15): error TS2304: Cannot find name 'OpenClawConfig'.
+src/config/group-policy.ts(2,15): error TS2305: Module '"./config.js"' has no exported member 'OpenClawConfig'.
+src/config/io.ts(237,36): error TS2304: Cannot find name 'OpenClawConfig'.
+src/config/io.ts(398,36): error TS2304: Cannot find name 'OpenClawConfig'.
+src/config/markdown-tables.ts(1,15): error TS2305: Module '"./config.js"' has no exported member 'OpenClawConfig'.
+src/config/merge-config.ts(1,15): error TS2305: Module '"./config.js"' has no exported member 'OpenClawConfig'.
+src/config/normalize-paths.ts(1,15): error TS2305: Module '"./types.js"' has no exported member 'OpenClawConfig'.
+src/config/paths.ts(4,15): error TS2305: Module '"./types.js"' has no exported member 'OpenClawConfig'.
+src/config/plugin-auto-enable.ts(1,15): error TS2305: Module '"./config.js"' has no exported member 'OpenClawConfig'.
+src/config/runtime-overrides.ts(1,15): error TS2305: Module '"./types.js"' has no exported member 'OpenClawConfig'.
+src/config/schema.ts(994,18): error TS2304: Cannot find name 'OpenClawSchema'.
+src/cron/isolated-agent/delivery-target.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/cron/isolated-agent/run.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/cron/isolated-agent/session.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/discord/accounts.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/discord/audit.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/discord/monitor/exec-approvals.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/discord/monitor/message-handler.preflight.types.ts(20,38): error TS2694: Namespace '"C:/Users/autre/Downloads/HueyclawMD-main/src/config/config"' has no exported member 'OpenClawConfig'.
+src/discord/monitor/message-handler.ts(19,36): error TS2694: Namespace '"C:/Users/autre/Downloads/HueyclawMD-main/src/config/config"' has no exported member 'OpenClawConfig'.
+src/discord/monitor/native-command.ts(21,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/discord/monitor/provider.ts(6,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/discord/token.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/assistant-identity.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/boot.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/call.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/config-reload.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/control-ui.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/hooks.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/node-command-policy.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/node-command-policy.ts(109,21): error TS18046: 'blocked' is of type 'unknown'.
+src/gateway/server-channels.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/server-methods/agent-timestamp.ts(1,15): error TS2305: Module '"../../config/types.js"' has no exported member 'OpenClawConfig'.
+src/gateway/server-methods/channels.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/server-methods/skills.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/server-runtime-state.ts(25,38): error TS2694: Namespace '"C:/Users/autre/Downloads/HueyclawMD-main/src/config/config"' has no exported member 'OpenClawConfig'.
+src/gateway/server.impl.ts(27,10): error TS2724: '"../infra/path-env.js"' has no exported member named 'ensureOpenClawCliOnPath'. Did you mean 'ensureDotCliOnPath'?
+src/gateway/session-utils.ts(13,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/session-utils.ts(310,13): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/gateway/sessions-patch.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/gateway/sessions-resolve.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/bundled/boot-md/handler.ts(2,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/bundled/session-memory/handler.ts(12,15): error TS2305: Module '"../../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/config.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/gmail-ops.ts(4,8): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/gmail-watcher.ts(9,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/gmail.ts(3,8): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/hooks-status.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/installs.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/internal-hooks.ts(9,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/llm-slug-generator.ts(8,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/loader.ts(10,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/workspace.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/hooks/workspace.ts(205,11): error TS7006: Parameter 'd' implicitly has an 'any' type.
+src/hooks/workspace.ts(214,41): error TS7006: Parameter 'dir' implicitly has an 'any' type.
+src/imessage/accounts.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/imessage/monitor/types.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/index.ts(23,10): error TS2724: '"./infra/path-env.js"' has no exported member named 'ensureOpenClawCliOnPath'. Did you mean 'ensureDotCliOnPath'?
+src/infra/channel-summary.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/diagnostic-events.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/diagnostic-flags.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/exec-approval-forwarder.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/heartbeat-runner.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/heartbeat-runner.ts(206,21): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/infra/heartbeat-runner.ts(215,8): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/infra/heartbeat-runner.ts(288,16): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/infra/heartbeat-runner.ts(289,13): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/infra/heartbeat-runner.ts(293,16): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/infra/heartbeat-visibility.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/agent-delivery.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/channel-selection.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/deliver.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/directory-cache.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/message-action-runner.ts(9,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/message.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/outbound-policy.ts(6,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/outbound-send-service.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/outbound-session.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/target-resolver.ts(6,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/outbound/targets.ts(2,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/session-cost-usage.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/skills-remote.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/infra/state-migrations.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/line/accounts.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/line/bot-handlers.ts(11,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/line/bot-message-context.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/line/bot.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/line/monitor.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/link-understanding/apply.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/link-understanding/runner.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/logging/config.ts(3,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/logging/console.ts(3,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/logging/logger.ts(5,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/logging/redact.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/mach/frontend/src/App.tsx(1,25): error TS2307: Cannot find module '@/components/ui/toaster' or its corresponding type declarations.
+src/mach/frontend/src/App.tsx(2,35): error TS2307: Cannot find module '@/components/ui/sonner' or its corresponding type declarations.
+src/mach/frontend/src/App.tsx(3,33): error TS2307: Cannot find module '@/components/ui/tooltip' or its corresponding type declarations.
+src/mach/frontend/src/App.tsx(6,19): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './pages/Index.js'?
+src/mach/frontend/src/App.tsx(7,22): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './pages/NotFound.js'?
+src/mach/frontend/src/App.tsx(12,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(13,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(14,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(15,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(16,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(17,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(18,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(18,36): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(20,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/App.tsx(20,36): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(4,23): error TS2307: Cannot find module '@/hooks/use-toast' or its corresponding type declarations.
+src/mach/frontend/src/components/FlightPlanCard.tsx(83,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(90,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(91,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(92,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(93,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(97,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(107,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(109,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(115,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(116,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(119,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(136,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(142,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(143,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(145,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(151,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(152,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(153,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(160,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(167,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(173,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(174,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(176,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(181,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(183,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(185,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(190,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(192,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(194,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(201,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(207,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(208,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(210,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/FlightPlanCard.tsx(212,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(74,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(80,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(82,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(94,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(105,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(106,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(112,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(114,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(120,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(131,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(145,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(151,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(158,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(160,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(167,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/MissionInput.tsx(175,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/NavLink.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/NavLink.tsx(14,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/accordion.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/accordion.tsx(13,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/accordion.tsx(21,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/accordion.tsx(22,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/accordion.tsx(31,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/accordion.tsx(41,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/accordion.tsx(46,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(5,32): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(17,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(32,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(33,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(34,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(47,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(52,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(60,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(68,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(76,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert-dialog.tsx(84,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/alert.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/alert.tsx(38,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/avatar.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/avatar.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/avatar.tsx(22,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/avatar.tsx(30,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/badge.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/badge.tsx(26,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(12,26): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(17,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(44,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(50,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(63,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(64,18): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(70,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(76,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/breadcrumb.tsx(77,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/button.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/button.tsx(42,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/calendar.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/calendar.tsx(6,32): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/calendar.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/calendar.tsx(45,38): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/calendar.tsx(46,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/card.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/card.tsx(6,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/card.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/card.tsx(19,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/card.tsx(26,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/card.tsx(32,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/card.tsx(38,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/carousel.tsx(6,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/carousel.tsx(106,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(118,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(139,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(140,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(156,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(173,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(188,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(189,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(201,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(216,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/carousel.tsx(217,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/chart.tsx(43,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(44,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(53,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(54,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(69,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(137,16): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(144,14): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(154,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(162,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(169,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(179,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(181,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(184,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(200,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(206,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(208,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(211,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(245,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(254,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(259,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/chart.tsx(261,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/checkbox.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/checkbox.tsx(11,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/checkbox.tsx(19,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/checkbox.tsx(20,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/command.tsx(7,39): error TS2307: Cannot find module '@/components/ui/dialog' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/command.tsx(13,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(28,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(29,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(30,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(42,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(43,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(44,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(61,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(73,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(81,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(97,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(105,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/command.tsx(118,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/context-menu.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(44,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(59,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(78,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(94,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(103,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(104,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(105,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(117,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(125,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(126,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(127,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(141,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(153,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/context-menu.tsx(158,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/dialog.tsx(19,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(34,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(36,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(45,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(46,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(47,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(55,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(60,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(68,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dialog.tsx(80,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/drawer.tsx(7,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(21,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(29,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(30,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(39,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(47,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(52,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(60,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/drawer.tsx(72,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(44,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(59,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(79,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(95,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(104,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(105,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(106,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(118,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(126,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(127,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(128,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(142,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(154,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/dropdown-menu.tsx(159,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/form.tsx(7,23): error TS2307: Cannot find module '@/components/ui/label' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/form.tsx(27,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(28,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(67,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(68,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(81,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(90,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(106,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/form.tsx(121,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/hover-card.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/hover-card.tsx(14,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input-otp.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/input-otp.tsx(9,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input-otp.tsx(20,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input-otp.tsx(32,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input-otp.tsx(43,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input-otp.tsx(44,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input-otp.tsx(54,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input-otp.tsx(55,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/input.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/input.tsx(8,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/label.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/label.tsx(13,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/menubar.tsx(21,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(33,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(50,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(69,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(84,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(85,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(106,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(122,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(131,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(132,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(133,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(145,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(153,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(154,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(155,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(169,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(181,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/menubar.tsx(186,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(12,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(27,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(45,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(51,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(63,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(80,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(81,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(97,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/navigation-menu.tsx(105,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/pagination.tsx(5,45): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/pagination.tsx(8,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(19,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(35,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(50,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(50,52): error TS2783: 'size' is specified more than once, so this usage will be overwritten.
+src/mach/frontend/src/components/ui/pagination.tsx(51,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(52,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(58,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(58,48): error TS2783: 'size' is specified more than once, so this usage will be overwritten.
+src/mach/frontend/src/components/ui/pagination.tsx(59,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(66,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(67,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/pagination.tsx(68,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/popover.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/popover.tsx(14,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/popover.tsx(15,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/progress.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/progress.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/progress.tsx(15,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/radio-group.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/radio-group.tsx(11,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/radio-group.tsx(20,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/radio-group.tsx(28,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/radio-group.tsx(29,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/resizable.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/resizable.tsx(7,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/resizable.tsx(22,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/resizable.tsx(30,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/resizable.tsx(31,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/scroll-area.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/scroll-area.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/scroll-area.tsx(11,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/scroll-area.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/scroll-area.tsx(13,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/scroll-area.tsx(22,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/scroll-area.tsx(33,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/select.tsx(17,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(26,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(27,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(37,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(42,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(51,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(56,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(65,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(66,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(77,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(78,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(87,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(97,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(105,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(113,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(114,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(115,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(119,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/select.tsx(128,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/separator.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/separator.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sheet.tsx(20,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(56,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(57,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(58,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(60,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(61,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(62,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(71,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(76,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(84,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sheet.tsx(92,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(6,29): error TS2307: Cannot find module '@/hooks/use-mobile' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(7,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(8,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(9,23): error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(10,27): error TS2307: Cannot find module '@/components/ui/separator' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(11,37): error TS2307: Cannot find module '@/components/ui/sheet' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(12,26): error TS2307: Cannot find module '@/components/ui/skeleton' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(13,74): error TS2307: Cannot find module '@/components/ui/tooltip' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/sidebar.tsx(109,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(110,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(111,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(143,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(155,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(156,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(167,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(174,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(183,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(193,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(207,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(224,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(230,19): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/mach/frontend/src/components/ui/sidebar.tsx(236,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(237,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(249,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(274,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(290,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(305,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(310,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(317,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(330,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(345,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(360,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(380,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(399,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(405,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(410,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(448,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(469,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(470,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(471,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(487,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(510,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(540,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(546,20): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(547,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(563,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(578,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sidebar.tsx(593,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/skeleton.tsx(1,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/skeleton.tsx(4,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/slider.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/slider.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/slider.tsx(15,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/slider.tsx(16,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/slider.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/sonner.tsx(10,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/switch.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/switch.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/switch.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/table.tsx(7,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(8,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(15,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(21,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(28,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(46,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/table.tsx(67,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/tabs.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/tabs.tsx(12,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/tabs.tsx(27,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/tabs.tsx(42,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/textarea.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/textarea.tsx(9,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toast.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/toast.tsx(14,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toast.tsx(44,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toast.tsx(52,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toast.tsx(67,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toast.tsx(76,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toast.tsx(85,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toast.tsx(93,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toaster.tsx(1,26): error TS2307: Cannot find module '@/hooks/use-toast' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/toaster.tsx(2,95): error TS2307: Cannot find module '@/components/ui/toast' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/toaster.tsx(8,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toaster.tsx(9,31): error TS7031: Binding element 'id' implicitly has an 'any' type.
+src/mach/frontend/src/components/ui/toaster.tsx(9,35): error TS7031: Binding element 'title' implicitly has an 'any' type.
+src/mach/frontend/src/components/ui/toaster.tsx(9,42): error TS7031: Binding element 'description' implicitly has an 'any' type.
+src/mach/frontend/src/components/ui/toaster.tsx(9,55): error TS7031: Binding element 'action' implicitly has an 'any' type.
+src/mach/frontend/src/components/ui/toaster.tsx(11,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toaster.tsx(12,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toaster.tsx(13,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toaster.tsx(14,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toaster.tsx(17,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toaster.tsx(21,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toggle-group.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/toggle-group.tsx(6,32): error TS2307: Cannot find module '@/components/ui/toggle' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/toggle-group.tsx(17,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toggle-group.tsx(17,4): error TS2322: Type '{ children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; } | { children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; }' is not assignable to type 'IntrinsicAttributes & ((ToggleGroupSingleProps | ToggleGroupMultipleProps) & RefAttributes<HTMLDivElement>)'.
+  Type '{ children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; }' is not assignable to type 'IntrinsicAttributes & ((ToggleGroupSingleProps | ToggleGroupMultipleProps) & RefAttributes<HTMLDivElement>)'.
+    Property 'type' is missing in type '{ children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; }' but required in type 'ToggleGroupMultipleProps'.
+src/mach/frontend/src/components/ui/toggle-group.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toggle-group.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/toggle-group.tsx(31,6): error TS2741: Property 'value' is missing in type '{ children: any; ref: ForwardedRef<HTMLButtonElement>; className: any; }' but required in type 'Omit<ToggleGroupItemImplProps, "pressed">'.
+src/mach/frontend/src/components/ui/toggle.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/toggle.tsx(32,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/tooltip.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/components/ui/tooltip.tsx(16,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/components/ui/use-toast.ts(1,33): error TS2307: Cannot find module '@/hooks/use-toast' or its corresponding type declarations.
+src/mach/frontend/src/FlightPlanCard.tsx(4,23): error TS2307: Cannot find module '@/hooks/use-toast' or its corresponding type declarations.
+src/mach/frontend/src/FlightPlanCard.tsx(83,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(90,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(91,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(92,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(93,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(97,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(107,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(109,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(115,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(116,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(119,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(136,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(142,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(143,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(145,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(151,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(152,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(153,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(160,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(167,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(173,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(174,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(176,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(181,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(183,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(185,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(190,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(192,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(194,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(201,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(207,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(208,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(210,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/FlightPlanCard.tsx(212,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/hooks/use-toast.ts(3,53): error TS2307: Cannot find module '@/components/ui/toast' or its corresponding type declarations.
+src/mach/frontend/src/hooks/use-toast.ts(153,22): error TS7006: Parameter 'open' implicitly has an 'any' type.
+src/mach/frontend/src/hooks/useMission.ts(2,26): error TS2307: Cannot find module '@/integrations/supabase/client' or its corresponding type declarations.
+src/mach/frontend/src/hooks/useMission.ts(41,10): error TS7006: Parameter 'payload' implicitly has an 'any' type.
+src/mach/frontend/src/integrations/supabase/client.ts(3,31): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './types.js'?
+src/mach/frontend/src/main.tsx(2,17): error TS5097: An import path can only end with a '.tsx' extension when 'allowImportingTsExtensions' is enabled.
+src/mach/frontend/src/main.tsx(2,17): error TS6142: Module './App.tsx' was resolved to 'C:/Users/autre/Downloads/HueyclawMD-main/src/mach/frontend/src/App.tsx', but '--jsx' is not set.
+src/mach/frontend/src/main.tsx(5,53): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(74,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(80,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(82,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(94,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(105,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(106,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(112,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(114,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(120,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(131,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(145,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(151,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(158,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(160,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(167,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/MissionInput.tsx(175,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/NavLink.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/NavLink.tsx(14,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(2,26): error TS2307: Cannot find module '@/components/MissionInput' or its corresponding type declarations.
+src/mach/frontend/src/pages/Index.tsx(3,28): error TS2307: Cannot find module '@/components/FlightPlanCard' or its corresponding type declarations.
+src/mach/frontend/src/pages/Index.tsx(4,28): error TS2307: Cannot find module '@/hooks/useMission' or its corresponding type declarations.
+src/mach/frontend/src/pages/Index.tsx(17,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(19,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(21,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(22,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(25,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(38,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(39,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(41,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(50,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(56,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(57,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(58,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(60,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(65,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(69,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(74,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(76,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(84,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(89,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/Index.tsx(95,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/NotFound.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/NotFound.tsx(13,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/NotFound.tsx(14,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/NotFound.tsx(15,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/pages/NotFound.tsx(16,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/accordion.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/accordion.tsx(13,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/accordion.tsx(21,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/accordion.tsx(22,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/accordion.tsx(31,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/accordion.tsx(41,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/accordion.tsx(46,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/alert-dialog.tsx(5,32): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/ui/alert-dialog.tsx(17,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(32,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(33,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(34,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(47,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(52,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(60,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(68,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(76,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert-dialog.tsx(84,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/alert.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/alert.tsx(38,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/avatar.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/avatar.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/avatar.tsx(22,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/avatar.tsx(30,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/badge.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/badge.tsx(26,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/breadcrumb.tsx(12,26): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(17,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(44,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(50,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(63,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(64,18): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(70,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(76,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/breadcrumb.tsx(77,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/button.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/button.tsx(42,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/calendar.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/calendar.tsx(6,32): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/ui/calendar.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/calendar.tsx(45,38): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/calendar.tsx(46,39): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/card.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/card.tsx(6,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/card.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/card.tsx(19,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/card.tsx(26,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/card.tsx(32,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/card.tsx(38,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/carousel.tsx(6,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/ui/carousel.tsx(106,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(118,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(139,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(140,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(156,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(173,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(188,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(189,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(201,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(216,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/carousel.tsx(217,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/chart.tsx(43,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(44,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(53,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(54,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(69,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(137,16): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(144,14): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(154,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(162,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(169,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(179,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(181,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(184,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(200,21): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(206,23): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(208,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(211,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(245,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(254,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(259,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/chart.tsx(261,15): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/checkbox.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/checkbox.tsx(11,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/checkbox.tsx(19,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/checkbox.tsx(20,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/command.tsx(7,39): error TS2307: Cannot find module '@/components/ui/dialog' or its corresponding type declarations.
+src/mach/frontend/src/ui/command.tsx(13,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(28,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(29,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(30,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(42,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(43,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(44,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(61,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(73,19): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(81,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(97,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(105,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/command.tsx(118,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/context-menu.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(44,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(59,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(78,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(94,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(103,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(104,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(105,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(117,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(125,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(126,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(127,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(141,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(153,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/context-menu.tsx(158,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/dialog.tsx(19,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(34,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(36,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(45,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(46,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(47,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(55,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(60,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(68,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dialog.tsx(80,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/drawer.tsx(7,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(21,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(29,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(30,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(39,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(47,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(52,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(60,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/drawer.tsx(72,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/dropdown-menu.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(44,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(59,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(79,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(95,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(104,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(105,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(106,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(118,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(126,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(127,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(128,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(142,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(154,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/dropdown-menu.tsx(159,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/form.tsx(7,23): error TS2307: Cannot find module '@/components/ui/label' or its corresponding type declarations.
+src/mach/frontend/src/ui/form.tsx(27,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(28,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(67,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(68,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(81,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(90,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(106,12): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/form.tsx(121,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/hover-card.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/hover-card.tsx(14,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input-otp.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/input-otp.tsx(9,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input-otp.tsx(20,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input-otp.tsx(32,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input-otp.tsx(43,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input-otp.tsx(44,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input-otp.tsx(54,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input-otp.tsx(55,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/input.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/input.tsx(8,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/label.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/label.tsx(13,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/menubar.tsx(21,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(33,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(50,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(69,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(84,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(85,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(106,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(122,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(131,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(132,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(133,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(145,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(153,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(154,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(155,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(169,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(181,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/menubar.tsx(186,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/navigation-menu.tsx(12,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(27,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(45,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(51,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(63,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(80,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(81,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(97,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/navigation-menu.tsx(105,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/pagination.tsx(5,45): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/ui/pagination.tsx(8,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(19,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(25,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(35,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(50,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(50,52): error TS2783: 'size' is specified more than once, so this usage will be overwritten.
+src/mach/frontend/src/ui/pagination.tsx(51,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(52,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(58,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(58,48): error TS2783: 'size' is specified more than once, so this usage will be overwritten.
+src/mach/frontend/src/ui/pagination.tsx(59,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(66,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(67,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/pagination.tsx(68,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/popover.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/popover.tsx(14,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/popover.tsx(15,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/progress.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/progress.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/progress.tsx(15,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/radio-group.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/radio-group.tsx(11,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/radio-group.tsx(20,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/radio-group.tsx(28,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/radio-group.tsx(29,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/resizable.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/resizable.tsx(7,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/resizable.tsx(22,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/resizable.tsx(30,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/resizable.tsx(31,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/scroll-area.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/scroll-area.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/scroll-area.tsx(11,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/scroll-area.tsx(12,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/scroll-area.tsx(13,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/scroll-area.tsx(22,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/scroll-area.tsx(33,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/select.tsx(17,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(26,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(27,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(37,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(42,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(51,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(56,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(65,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(66,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(77,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(78,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(87,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(97,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(105,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(113,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(114,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(115,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(119,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/select.tsx(128,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/separator.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/separator.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/sheet.tsx(20,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(56,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(57,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(58,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(60,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(61,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(62,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(71,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(76,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(84,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sheet.tsx(92,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(6,29): error TS2307: Cannot find module '@/hooks/use-mobile' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(7,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(8,24): error TS2307: Cannot find module '@/components/ui/button' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(9,23): error TS2307: Cannot find module '@/components/ui/input' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(10,27): error TS2307: Cannot find module '@/components/ui/separator' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(11,37): error TS2307: Cannot find module '@/components/ui/sheet' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(12,26): error TS2307: Cannot find module '@/components/ui/skeleton' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(13,74): error TS2307: Cannot find module '@/components/ui/tooltip' or its corresponding type declarations.
+src/mach/frontend/src/ui/sidebar.tsx(109,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(110,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(111,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(143,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(155,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(156,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(167,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(174,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(183,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(193,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(207,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(224,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(230,19): error TS7006: Parameter 'event' implicitly has an 'any' type.
+src/mach/frontend/src/ui/sidebar.tsx(236,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(237,9): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(249,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(274,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(290,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(305,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(310,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(317,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(330,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(345,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(360,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(380,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(399,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(405,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(410,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(448,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(469,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(470,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(471,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(487,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(510,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(540,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(546,20): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(547,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(563,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(578,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sidebar.tsx(593,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/skeleton.tsx(1,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/skeleton.tsx(4,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/slider.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/slider.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/slider.tsx(15,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/slider.tsx(16,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/slider.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/sonner.tsx(10,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/switch.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/switch.tsx(10,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/switch.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/table.tsx(7,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(8,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(15,37): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(21,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(28,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(35,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(46,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(60,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/table.tsx(67,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/tabs.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/tabs.tsx(12,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/tabs.tsx(27,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/tabs.tsx(42,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/textarea.tsx(3,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/textarea.tsx(9,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toast.tsx(6,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/toast.tsx(14,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toast.tsx(44,10): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toast.tsx(52,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toast.tsx(67,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toast.tsx(76,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toast.tsx(85,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toast.tsx(93,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toaster.tsx(1,26): error TS2307: Cannot find module '@/hooks/use-toast' or its corresponding type declarations.
+src/mach/frontend/src/ui/toaster.tsx(2,95): error TS2307: Cannot find module '@/components/ui/toast' or its corresponding type declarations.
+src/mach/frontend/src/ui/toaster.tsx(8,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toaster.tsx(9,31): error TS7031: Binding element 'id' implicitly has an 'any' type.
+src/mach/frontend/src/ui/toaster.tsx(9,35): error TS7031: Binding element 'title' implicitly has an 'any' type.
+src/mach/frontend/src/ui/toaster.tsx(9,42): error TS7031: Binding element 'description' implicitly has an 'any' type.
+src/mach/frontend/src/ui/toaster.tsx(9,55): error TS7031: Binding element 'action' implicitly has an 'any' type.
+src/mach/frontend/src/ui/toaster.tsx(11,11): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toaster.tsx(12,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toaster.tsx(13,25): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toaster.tsx(14,31): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toaster.tsx(17,13): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toaster.tsx(21,7): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toggle-group.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/toggle-group.tsx(6,32): error TS2307: Cannot find module '@/components/ui/toggle' or its corresponding type declarations.
+src/mach/frontend/src/ui/toggle-group.tsx(17,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toggle-group.tsx(17,4): error TS2322: Type '{ children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; } | { children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; }' is not assignable to type 'IntrinsicAttributes & ((ToggleGroupSingleProps | ToggleGroupMultipleProps) & RefAttributes<HTMLDivElement>)'.
+  Type '{ children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; }' is not assignable to type 'IntrinsicAttributes & ((ToggleGroupSingleProps | ToggleGroupMultipleProps) & RefAttributes<HTMLDivElement>)'.
+    Property 'type' is missing in type '{ children: Element; ref: ForwardedRef<HTMLDivElement>; className: any; }' but required in type 'ToggleGroupMultipleProps'.
+src/mach/frontend/src/ui/toggle-group.tsx(18,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toggle-group.tsx(31,5): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/toggle-group.tsx(31,6): error TS2741: Property 'value' is missing in type '{ children: any; ref: ForwardedRef<HTMLButtonElement>; className: any; }' but required in type 'Omit<ToggleGroupItemImplProps, "pressed">'.
+src/mach/frontend/src/ui/toggle.tsx(5,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/toggle.tsx(32,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/tooltip.tsx(4,20): error TS2307: Cannot find module '@/lib/utils' or its corresponding type declarations.
+src/mach/frontend/src/ui/tooltip.tsx(16,3): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
+src/mach/frontend/src/ui/use-toast.ts(1,33): error TS2307: Cannot find module '@/hooks/use-toast' or its corresponding type declarations.
+src/macos/relay.ts(52,11): error TS2339: Property 'ensureOpenClawCliOnPath' does not exist on type 'typeof import("C:/Users/autre/Downloads/HueyclawMD-main/src/infra/path-env", { with: { "resolution-mode": "import" } })'.
+src/media-understanding/apply.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/media-understanding/resolve.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/media-understanding/resolve.ts(111,26): error TS7006: Parameter 'entry' implicitly has an 'any' type.
+src/media-understanding/runner.ts(6,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/media-understanding/types.ts(100,38): error TS2694: Namespace '"C:/Users/autre/Downloads/HueyclawMD-main/src/config/config"' has no exported member 'OpenClawConfig'.
+src/memory/embeddings.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/memory/manager.ts(8,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/memory/search-manager.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/node-host/runner.ts(43,10): error TS2724: '"../infra/path-env.js"' has no exported member named 'ensureOpenClawCliOnPath'. Did you mean 'ensureDotCliOnPath'?
+src/plugin-sdk/index.ts(75,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/cli.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/commands.ts(8,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/config-state.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/enable.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/installs.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/loader.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/manifest-registry.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/services.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/slots.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/types.ts(10,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/update.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/plugins/update.ts(335,9): error TS18046: 'record' is of type 'unknown'.
+src/plugins/update.ts(335,48): error TS18046: 'record' is of type 'unknown'.
+src/plugins/update.ts(345,15): error TS18046: 'record' is of type 'unknown'.
+src/plugins/update.ts(346,18): error TS18046: 'record' is of type 'unknown'.
+src/plugins/update.ts(358,11): error TS18046: 'record' is of type 'unknown'.
+src/plugins/update.ts(363,11): error TS18046: 'record' is of type 'unknown'.
+src/plugins/update.ts(366,23): error TS18046: 'record' is of type 'unknown'.
+src/plugins/update.ts(370,20): error TS18046: 'record' is of type 'unknown'.
+src/routing/bindings.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/routing/resolve-route.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/security/audit-extra.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/security/audit-extra.ts(524,40): error TS7006: Parameter 'agent' implicitly has an 'any' type.
+src/security/audit-extra.ts(896,15): error TS7006: Parameter 'a' implicitly has an 'any' type.
+src/security/audit.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/security/audit.ts(441,47): error TS2345: Argument of type 'unknown' is not assignable to parameter of type '(string | number)[] | null | undefined'.
+src/security/fix.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/sessions/send-policy.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/signal/accounts.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/signal/monitor.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/signal/monitor/event-handler.types.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/signal/reaction-level.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/slack/accounts.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/slack/channel-migration.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/slack/monitor/context.ts(3,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/slack/monitor/types.ts(1,15): error TS2305: Module '"../../config/config.js"' has no exported member 'OpenClawConfig'.
+src/slack/threading-tool-context.ts(5,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/accounts.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/bot-message-context.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/bot-message-dispatch.ts(17,10): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/bot-native-commands.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/bot.ts(7,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/draft-chunking.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/group-migration.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/inline-buttons.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/monitor.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/reaction-level.ts(1,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/sticker-cache.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/token.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/telegram/webhook.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/tts/tts.ts(17,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/tui/commands.ts(2,15): error TS2305: Module '"../config/types.js"' has no exported member 'OpenClawConfig'.
+src/utils/usage-format.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/utils/usage-format.ts(57,52): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/web/accounts.ts(3,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/web/reconnect.ts(2,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/wizard/onboarding.finalize.ts(4,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/wizard/onboarding.gateway-config.ts(2,54): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+src/wizard/onboarding.ts(7,15): error TS2305: Module '"../config/config.js"' has no exported member 'OpenClawConfig'.
+ΓÇëELIFECYCLEΓÇë Command failed with exit code 1.

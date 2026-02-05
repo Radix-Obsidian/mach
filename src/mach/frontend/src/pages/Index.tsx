@@ -1,13 +1,43 @@
 import { motion, AnimatePresence } from "framer-motion";
+import { LogOut, Menu } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import MissionInput from "@/components/MissionInput";
 import FlightPlanCard from "@/components/FlightPlanCard";
+import { UpgradeModal } from "@/components/UpgradeModal";
 import { useMission } from "@/hooks/useMission";
+import { useSession } from "@/hooks/useSession";
+import { useSubscription } from "@/hooks/useSubscription";
+import { supabase } from "@/integrations/supabase/client";
 
 const Index = () => {
   const { mission, isLoading, createMission, reset } = useMission();
+  const { session } = useSession();
+  const { subscription, canCreateMission, remainingMissions } = useSubscription();
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
-  const handleSubmit = async (objective: string) => {
-    await createMission(objective);
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
+
+  const handleSubmit = async (objective: string, options?: {
+    repoUrl?: string;
+    files?: File[];
+    businessContext?: { revenue_model?: string; monthly_revenue?: number; user_count?: number };
+  }) => {
+    // Check quota before creating mission
+    if (!canCreateMission()) {
+      setShowUpgradeModal(true);
+      return;
+    }
+
+    await createMission(objective, options);
   };
 
   // Show card when mission exists AND status is complete or failed
@@ -15,6 +45,32 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
+      {/* Header with user menu */}
+      <header className="fixed top-0 right-0 z-50 p-4">
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="outline" size="icon">
+              <Menu className="w-4 h-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end">
+            <div className="px-2 py-1.5 text-sm text-muted-foreground">
+              {session?.user?.email}
+            </div>
+            <a
+              href="/app/settings"
+              className="flex items-center gap-2 px-2 py-1.5 text-sm hover:bg-slate-900 rounded cursor-pointer transition-colors"
+            >
+              Settings
+            </a>
+            <DropdownMenuItem onClick={handleLogout} className="text-red-600">
+              <LogOut className="w-4 h-4 mr-2" />
+              Sign Out
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </header>
+
       {/* Ambient background effects */}
       <div className="fixed inset-0 pointer-events-none">
         {/* Gradient orbs */}
@@ -63,7 +119,24 @@ const Index = () => {
               </motion.div>
 
               <MissionInput onSubmit={handleSubmit} isLoading={isLoading} />
-              
+
+              {/* Quota indicator */}
+              {subscription && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="text-center font-mono text-xs text-muted-foreground"
+                >
+                  <p>Missions: {remainingMissions()} remaining this month</p>
+                  <div className="w-48 h-1 bg-slate-800 rounded-full mt-2 overflow-hidden">
+                    <div
+                      className="h-full bg-gradient-to-r from-primary to-accent transition-all"
+                      style={{ width: `${Math.min(100, (subscription.missions_used / subscription.missions_quota) * 100)}%` }}
+                    />
+                  </div>
+                </motion.div>
+              )}
+
               {/* Pending / processing state indicator */}
               {mission && (mission.status === "pending" || mission.status === "processing") && (
                 <motion.div
@@ -96,6 +169,15 @@ const Index = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Upgrade Modal */}
+        <UpgradeModal
+          isOpen={showUpgradeModal}
+          onClose={() => setShowUpgradeModal(false)}
+          currentTier={subscription?.plan_tier || "free"}
+          missionsUsed={subscription?.missions_used || 0}
+          missionsQuota={subscription?.missions_quota || 3}
+        />
       </div>
     </div>
   );

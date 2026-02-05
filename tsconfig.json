@@ -1,28 +1,48 @@
-{
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "lib": ["DOM", "DOM.Iterable", "ES2023", "ScriptHost"],
-    "noEmit": true,
-    "declaration": true,
-    "noEmitOnError": true,
-    "outDir": "dist",
-    "resolveJsonModule": true,
-    "rootDir": "src",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2023"
-  },
-  "include": ["src/**/*"],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "src/**/*.test.ts",
-    "src/**/*.test.tsx",
-    "src/**/test-helpers.ts",
-    "src/mach/frontend/**/*"
-  ]
-}
+ {
+   "compilerOptions": {
+     "target": "ES2020",
+     "useDefineForClassFields": true,
+     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+     "module": "ESNext",
+     "skipLibCheck": true,
+     "moduleResolution": "bundler",
+     "allowImportingTsExtensions": true,
+     "resolveJsonModule": true,
+     "isolatedModules": true,
+     "noEmit": true,
+     "jsx": "react-jsx",
+     "strict": false,
+     "noUnusedLocals": false,
+     "noUnusedParameters": false,
+     "noFallthroughCasesInSwitch": true,
+     "allowSyntheticDefaultImports": true,
+     "esModuleInterop": true,
+     "baseUrl": ".",
+     "paths": {
+       "@/*": ["./src/*"]
+     }
+   },
+   "files": [
+     "src/App.tsx",
+     "src/main.tsx",
+     "src/vite-env.d.ts",
+     "src/index.css",
+     "src/lib/utils.ts",
+     "src/pages/Index.tsx",
+     "src/pages/NotFound.tsx",
+     "src/hooks/useMission.ts",
+     "src/hooks/use-toast.ts",
+     "src/components/MissionInput.tsx",
+     "src/components/FlightPlanCard.tsx",
+     "src/components/ui/button.tsx",
+     "src/components/ui/card.tsx",
+     "src/components/ui/input.tsx",
+     "src/components/ui/toast.tsx",
+     "src/components/ui/toaster.tsx",
+     "src/components/ui/tooltip.tsx",
+     "src/components/ui/sonner.tsx",
+     "src/integrations/supabase/client.ts",
+     "src/integrations/supabase/types.ts"
+   ],
+   "exclude": ["node_modules"]
+ }

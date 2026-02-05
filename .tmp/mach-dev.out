@@ -1,0 +1,8 @@
+============================================================
+[Mach] 🚀 Unified server running on port 8080
+[Mach] 📁 Frontend: C:\Users\autre\Downloads\HueyclawMD-main\mach-frontend\dist
+[Mach] 🔗 API: http://localhost:8080/api
+============================================================
+[Mach] 🔄 Starting polling mode (dev fallback)...
+[Mach Worker] 🔄 Polling every 5000ms
+[Mach] GET /api/health

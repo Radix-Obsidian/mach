@@ -3,9 +3,6 @@ import { createClient } from "@supabase/supabase-js";
 
 const router = Router();
 
-const SUPABASE_URL = process.env.VITE_SUPABASE_URL;
-const SUPABASE_SERVICE_KEY = process.env.SUPABASE_SERVICE_KEY;
-
 type HealthStatus = {
   status: "healthy" | "degraded" | "unhealthy";
   timestamp: string;
@@ -28,9 +25,11 @@ router.get("/health", async (_req, res) => {
   };
 
   // Check Supabase connection
-  if (SUPABASE_URL && SUPABASE_SERVICE_KEY) {
+  const sbUrl = process.env.VITE_SUPABASE_URL;
+  const sbKey = process.env.SUPABASE_SERVICE_KEY;
+  if (sbUrl && sbKey) {
     try {
-      const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
+      const supabase = createClient(sbUrl, sbKey);
       const { error } = await supabase.from("missions").select("id").limit(1);
       checks.supabase = !error;
     } catch {
