@@ -152,9 +152,9 @@
     "mach:frontend:install": "cd src/mach/frontend && npm install",
     "mach:frontend:build": "cd src/mach/frontend && npm run build",
     "mach:frontend:dev": "cd src/mach/frontend && npm run dev",
-    "mach:backend:dev": "node --import tsx src/mach/server.ts",
+    "mach:backend:dev": "node --watch --import tsx src/mach/server.ts",
     "mach:build": "npm run mach:frontend:build && mkdir -p dist/mach-frontend && cp -r src/mach/frontend/dist/* dist/mach-frontend/",
-    "mach:dev": "concurrently \"npm run mach:frontend:dev\" \"MACH_POLLING=1 npm run mach:backend:dev\"",
+    "mach:dev": "concurrently \"npm run mach:frontend:dev\" \"npm run mach:backend:dev\"",
     "mach:start": "node --import tsx src/mach/server.ts"
   },
   "dependencies": {
@@ -227,6 +227,12 @@
     "tslog": "^4.10.2",
     "undici": "^7.20.0",
     "ws": "^8.19.0",
+    "@langchain/anthropic": "^0.3.17",
+    "@langchain/community": "^0.3.38",
+    "@langchain/core": "^0.3.55",
+    "@langchain/openai": "^0.5.12",
+    "langchain": "^0.3.24",
+    "openai": "^4.96.0",
     "yaml": "^2.8.2",
     "zod": "^4.3.6"
   },
