@@ -190,6 +190,7 @@ function buildEnrichedPrompt(
   objective: string,
   repoContext: string | null,
   businessContext?: { revenue_model?: string; monthly_revenue?: number; user_count?: number },
+  documents?: Array<{ name: string; content: string }>,
 ): string {
   const parts: string[] = [`## MISSION OBJECTIVE\n${objective}`];
 
@@ -205,6 +206,11 @@ function buildEnrichedPrompt(
 
   if (repoContext) {
     parts.push(`## ATTACHED CODEBASE\nThe following is from the GitHub repository the user attached. Use this to evaluate feasibility, identify contradictions, and ground your analysis in the actual system.\n\n${repoContext}`);
+  }
+
+  if (documents && documents.length > 0) {
+    const docSections = documents.map((doc) => `### ${doc.name}\n${doc.content}`).join("\n\n");
+    parts.push(`## ATTACHED DOCUMENTS\nThe user attached the following spec documents. Use their content as evidence — reference specific sections, flag contradictions, and ground your analysis.\n\n${docSections}`);
   }
 
   return parts.join("\n\n---\n\n");
@@ -412,10 +418,10 @@ export async function processMission(id: string, objective: string): Promise<voi
   console.log(`[Mach Worker] 🚀 Processing mission ${id}`);
   console.log(`[Mach Worker] 📋 Objective: ${objective.substring(0, 100)}...`);
 
-  // Fetch full mission record (owner_id, repository_url, business_context)
+  // Fetch full mission record (owner_id, repository_url, business_context, spec_documents)
   const { data: missionData, error: ownerErr } = await supabase
     .from("missions")
-    .select("owner_id, repository_url, business_context")
+    .select("owner_id, repository_url, business_context, spec_documents")
     .eq("id", id)
     .single();
   if (ownerErr) {
@@ -424,9 +430,11 @@ export async function processMission(id: string, objective: string): Promise<voi
   const ownerId = missionData?.owner_id;
   const repositoryUrl = missionData?.repository_url as string | undefined;
   const businessContext = missionData?.business_context as { revenue_model?: string; monthly_revenue?: number; user_count?: number } | undefined;
+  const specDocuments = missionData?.spec_documents as Array<{ name: string; url: string; type: string; size: number }> | undefined;
   console.log(`[Mach Worker] 👤 Mission ${id} owner: ${ownerId || "UNKNOWN"}`);
   if (repositoryUrl) console.log(`[Mach Worker] 📦 Repository: ${repositoryUrl}`);
   if (businessContext) console.log(`[Mach Worker] 💰 Business context attached`);
+  if (specDocuments?.length) console.log(`[Mach Worker] 📎 ${specDocuments.length} document(s) attached`);
 
   // === MACH-TRACE: Inverse RAG Validation ===
   if (repositoryUrl && process.env.OPENAI_API_KEY) {
@@ -505,8 +513,55 @@ export async function processMission(id: string, objective: string): Promise<voi
       repoContext = await fetchGitHubContext(repositoryUrl);
     }
 
+    // Fetch attached document content (truncate to ~4000 chars each)
+    const docContents: Array<{ name: string; content: string }> = [];
+    if (specDocuments?.length) {
+      const MAX_DOC_CHARS = 4000;
+      for (const doc of specDocuments) {
+        try {
+          // Text-based files: fetch content directly from Supabase Storage URL
+          const docRes = await fetch(doc.url);
+          if (!docRes.ok) {
+            console.warn(`[Mach Worker] ⚠️ Failed to fetch document ${doc.name}: ${docRes.status}`);
+            continue;
+          }
+
+          let text: string;
+          const isText = /\.(md|txt|csv|json)$/i.test(doc.name);
+          if (isText) {
+            text = await docRes.text();
+          } else {
+            // Binary files (PDF, DOCX): extract what we can as text
+            // For now, read as text — binary content will be garbled but
+            // at minimum DOCX XML and PDF text chunks are partially readable
+            const buffer = await docRes.arrayBuffer();
+            text = Buffer.from(buffer).toString("utf-8");
+            // Strip non-printable characters for readability
+            text = text.replace(/[^\x20-\x7E\n\r\t]/g, " ").replace(/\s{3,}/g, " ");
+          }
+
+          if (text.trim().length > 0) {
+            docContents.push({
+              name: doc.name,
+              content: text.length > MAX_DOC_CHARS
+                ? text.substring(0, MAX_DOC_CHARS) + `\n\n[... truncated at ${MAX_DOC_CHARS} chars]`
+                : text,
+            });
+            console.log(`[Mach Worker] 📄 Document "${doc.name}" loaded (${Math.min(text.length, MAX_DOC_CHARS)} chars)`);
+          }
+        } catch (docErr) {
+          console.warn(`[Mach Worker] ⚠️ Document fetch failed for ${doc.name}:`, docErr);
+        }
+      }
+    }
+
     // Build enriched prompt with all attached context
-    const enrichedPrompt = buildEnrichedPrompt(objective, repoContext, businessContext);
+    const enrichedPrompt = buildEnrichedPrompt(
+      objective,
+      repoContext,
+      businessContext,
+      docContents.length > 0 ? docContents : undefined,
+    );
     console.log(`[Mach Worker] 🤖 Running agent: ${provider}/${model} (prompt: ${enrichedPrompt.length} chars)`);
 
     const result = await runEmbeddedPiAgent({
