@@ -54,8 +54,7 @@ export function useSubscription() {
           setSubscription(null);
         }
       } catch (err) {
-        const message =
-          err instanceof Error ? err.message : "Failed to fetch subscription";
+        const message = err instanceof Error ? err.message : "Failed to fetch subscription";
         setError(message);
         console.error("Subscription fetch error:", err);
       } finally {
@@ -79,7 +78,7 @@ export function useSubscription() {
           if (payload.new) {
             setSubscription(payload.new as Subscription);
           }
-        }
+        },
       )
       .subscribe();
 
@@ -88,7 +87,10 @@ export function useSubscription() {
     };
   }, []);
 
+  const devBypass = import.meta.env.VITE_DEV_UNLIMITED_QUOTA === "1";
+
   const canCreateMission = (): boolean => {
+    if (devBypass) return true;
     if (!subscription) {
       // No subscription yet - free tier allows first mission
       return true;
@@ -98,6 +100,7 @@ export function useSubscription() {
   };
 
   const remainingMissions = (): number => {
+    if (devBypass) return 999;
     if (!subscription) return 3; // Free tier default
     return Math.max(0, subscription.missions_quota - subscription.missions_used);
   };

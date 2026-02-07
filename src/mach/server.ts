@@ -96,6 +96,19 @@ app.listen(PORT, () => {
   console.log(`[Mach] 🚀 Unified server running on port ${PORT}`);
   console.log(`[Mach] 📁 Frontend: ${frontendPath}`);
   console.log(`[Mach] 🔗 API: http://localhost:${PORT}/api`);
+
+  // Environment diagnostic
+  const hasUrl = !!process.env.VITE_SUPABASE_URL;
+  const hasKey = !!process.env.SUPABASE_SERVICE_KEY;
+  const keyPrefix = process.env.SUPABASE_SERVICE_KEY?.slice(0, 12) || "MISSING";
+  const hasAnthropicKey = !!process.env.ANTHROPIC_API_KEY;
+  const devQuota = process.env.MACH_DEV_UNLIMITED_QUOTA === "1";
+  console.log(
+    `[Mach] 🔐 Supabase URL: ${hasUrl ? "✅" : "❌"} | Key: ${hasKey ? `✅ (${keyPrefix}...)` : "❌"}`,
+  );
+  console.log(
+    `[Mach] 🤖 Anthropic: ${hasAnthropicKey ? "✅" : "❌"} | Dev Quota Bypass: ${devQuota ? "✅ ON" : "OFF"}`,
+  );
   console.log("=".repeat(60));
 
   // In development or if MACH_POLLING=1, use polling mode as fallback

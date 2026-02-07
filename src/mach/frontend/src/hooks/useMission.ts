@@ -54,7 +54,12 @@ export const useMission = (): UseMissionReturn => {
 
   // Poll the backend for mission status updates
   useEffect(() => {
-    if (!mission || mission.status === "complete" || mission.status === "failed") {
+    if (
+      !mission ||
+      mission.status === "complete" ||
+      mission.status === "failed" ||
+      mission.status === "rejected"
+    ) {
       if (pollRef.current) {
         clearInterval(pollRef.current);
         pollRef.current = null;

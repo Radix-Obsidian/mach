@@ -1,6 +1,16 @@
-import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Sparkles, AlertTriangle, Paperclip, Github, ChevronDown, ChevronUp, X } from "lucide-react";
+import {
+  ArrowRight,
+  Sparkles,
+  AlertTriangle,
+  Paperclip,
+  Github,
+  ChevronDown,
+  ChevronUp,
+  X,
+  Upload,
+} from "lucide-react";
+import { useState, useRef } from "react";
 
 interface AuditOptions {
   repoUrl?: string;
@@ -24,26 +34,32 @@ interface ValidationResult {
 
 const validateObjective = (input: string): ValidationResult => {
   const trimmed = input.trim();
-  
+
   // Too short
   if (trimmed.length < 10) {
-    return { isValid: false, message: "REJECTED: Objective too brief. Minimum 10 characters required." };
+    return {
+      isValid: false,
+      message: "REJECTED: Objective too brief. Minimum 10 characters required.",
+    };
   }
-  
+
   // Single word or very vague
-  const wordCount = trimmed.split(/\s+/).filter(w => w.length > 0).length;
+  const wordCount = trimmed.split(/\s+/).filter((w) => w.length > 0).length;
   if (wordCount < 3) {
     return { isValid: false, message: "REJECTED: Objective too vague. Provide more context." };
   }
-  
+
   // Only generic words
   const genericWords = ["app", "website", "thing", "stuff", "something", "build", "make", "create"];
   const words = trimmed.toLowerCase().split(/\s+/);
-  const meaningfulWords = words.filter(w => !genericWords.includes(w) && w.length > 2);
+  const meaningfulWords = words.filter((w) => !genericWords.includes(w) && w.length > 2);
   if (meaningfulWords.length < 2) {
-    return { isValid: false, message: "REJECTED: Objective lacks specificity. Define a clear goal." };
+    return {
+      isValid: false,
+      message: "REJECTED: Objective lacks specificity. Define a clear goal.",
+    };
   }
-  
+
   return { isValid: true, message: "" };
 };
 
@@ -62,6 +78,51 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
   const [userCount, setUserCount] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const dragCounter = useRef(0);
+
+  const ACCEPTED_EXTENSIONS = ACCEPTED_FILE_TYPES.split(",").map((t) => t.toLowerCase());
+
+  const filterValidFiles = (files: FileList | File[]): File[] => {
+    return Array.from(files).filter((file) => {
+      const ext = "." + file.name.split(".").pop()?.toLowerCase();
+      return ACCEPTED_EXTENSIONS.includes(ext);
+    });
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+  };
+
+  const handleDragEnter = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter.current++;
+    setIsDragging(true);
+  };
+
+  const handleDragLeave = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter.current--;
+    if (dragCounter.current === 0) {
+      setIsDragging(false);
+    }
+  };
+
+  const handleDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    dragCounter.current = 0;
+    setIsDragging(false);
+
+    const droppedFiles = filterValidFiles(e.dataTransfer.files);
+    if (droppedFiles.length > 0) {
+      setUploadedFiles((prev) => [...prev, ...droppedFiles]);
+      setShowAuditPanel(true);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -110,7 +171,8 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
 
   const isRejected = rejection !== null;
   const hasValue = value.trim().length > 0;
-  const hasAuditData = repoUrl.trim() || uploadedFiles.length > 0 || revenueModel || monthlyRevenue || userCount;
+  const hasAuditData =
+    repoUrl.trim() || uploadedFiles.length > 0 || revenueModel || monthlyRevenue || userCount;
 
   return (
     <motion.div
@@ -118,17 +180,39 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className="w-full max-w-xl"
+      onDragOver={handleDragOver}
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
     >
       <form onSubmit={handleSubmit} className="relative">
+        {/* Drop zone overlay */}
+        <AnimatePresence>
+          {isDragging && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="absolute inset-0 z-50 rounded-2xl border-2 border-dashed border-primary bg-primary/10 backdrop-blur-sm flex flex-col items-center justify-center gap-2 pointer-events-none"
+            >
+              <Upload className="w-8 h-8 text-primary" />
+              <p className="text-sm font-mono text-primary">Drop files here</p>
+              <p className="text-xs font-mono text-muted-foreground">
+                PDF, DOCX, MD, TXT, CSV, JSON
+              </p>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* Glow effect behind input */}
         <motion.div
-          className="absolute inset-0 rounded-2xl"
+          className="absolute inset-0 rounded-2xl pointer-events-none"
           animate={{
             boxShadow: isRejected
               ? "0 0 40px hsl(20 90% 55% / 0.3), 0 0 80px hsl(20 90% 55% / 0.15)"
               : isFocused
-              ? "0 0 40px hsl(175 80% 50% / 0.2), 0 0 80px hsl(175 80% 50% / 0.1)"
-              : "0 0 20px hsl(175 80% 50% / 0.1)",
+                ? "0 0 40px hsl(175 80% 50% / 0.2), 0 0 80px hsl(175 80% 50% / 0.1)"
+                : "0 0 20px hsl(175 80% 50% / 0.1)",
           }}
           transition={{ duration: 0.3 }}
         />
@@ -140,8 +224,8 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
             isRejected
               ? "border-[hsl(20,90%,55%)]/70"
               : isFocused
-              ? "border-primary/50 animate-border-glow"
-              : "border-border/50"
+                ? "border-primary/50 animate-border-glow"
+                : "border-border/50"
           }`}
         >
           <div className="flex items-center gap-3 p-2">
@@ -153,9 +237,11 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
               {isRejected ? (
                 <AlertTriangle className="w-5 h-5 text-[hsl(20,90%,55%)]" />
               ) : (
-                <Sparkles className={`w-5 h-5 transition-colors duration-300 ${
-                  isFocused ? "text-primary" : "text-muted-foreground"
-                }`} />
+                <Sparkles
+                  className={`w-5 h-5 transition-colors duration-300 ${
+                    isFocused ? "text-primary" : "text-muted-foreground"
+                  }`}
+                />
               )}
             </motion.div>
 
@@ -179,8 +265,8 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
                 isRejected
                   ? "bg-[hsl(20,90%,55%)] text-white"
                   : hasValue && !isLoading
-                  ? "bg-primary text-primary-foreground glow-shadow"
-                  : "bg-muted text-muted-foreground"
+                    ? "bg-primary text-primary-foreground glow-shadow"
+                    : "bg-muted text-muted-foreground"
               }`}
             >
               {isLoading ? (
@@ -218,14 +304,16 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
           <button
             type="button"
             onClick={() => setShowAuditPanel(!showAuditPanel)}
-            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors font-mono"
+            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors font-mono px-3 py-1 rounded-md border border-transparent hover:border-white/10 hover:bg-white/5 cursor-pointer"
           >
-            {showAuditPanel ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
+            {showAuditPanel ? (
+              <ChevronUp className="w-3 h-3" />
+            ) : (
+              <ChevronDown className="w-3 h-3" />
+            )}
             {hasAuditData ? "Audit context attached" : "Add audit context"}
           </button>
-          {hasAuditData && (
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-          )}
+          {hasAuditData && <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />}
         </div>
 
         {/* Audit context panel */}
@@ -272,10 +360,19 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
                   {uploadedFiles.length > 0 && (
                     <div className="mt-2 space-y-1">
                       {uploadedFiles.map((file, i) => (
-                        <div key={`${file.name}-${i}`} className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
+                        <div
+                          key={`${file.name}-${i}`}
+                          className="flex items-center gap-2 text-xs font-mono text-muted-foreground"
+                        >
                           <span className="truncate flex-1">{file.name}</span>
-                          <span className="text-muted-foreground/50">{(file.size / 1024).toFixed(0)}KB</span>
-                          <button type="button" onClick={() => removeFile(i)} className="hover:text-foreground">
+                          <span className="text-muted-foreground/50">
+                            {(file.size / 1024).toFixed(0)}KB
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => removeFile(i)}
+                            className="hover:text-foreground"
+                          >
                             <X className="w-3 h-3" />
                           </button>
                         </div>
@@ -322,7 +419,7 @@ const MissionInput = ({ onSubmit, isLoading }: MissionInputProps) => {
           animate={{ opacity: isRejected ? 0 : isFocused ? 1 : 0.5 }}
           className="text-center text-xs text-muted-foreground mt-4 font-mono"
         >
-          Press Enter to generate flight plan
+          Press Enter to generate flight plan — or drag files here
         </motion.p>
       </form>
     </motion.div>

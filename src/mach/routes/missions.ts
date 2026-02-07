@@ -51,8 +51,14 @@ router.post("/missions", authenticateUser, async (req: AuthenticatedRequest, res
       return res.status(500).json({ error: "Failed to check quota" });
     }
 
-    // If subscription exists and quota is exceeded, reject
-    if (subscription && subscription.missions_used >= subscription.missions_quota) {
+    // Dev mode: bypass quota check for testing
+    const devBypass = process.env.MACH_DEV_UNLIMITED_QUOTA === "1";
+    if (devBypass) {
+      console.log(`[Mach Missions] 🔧 Dev mode: quota bypass enabled for user ${req.user.id}`);
+    }
+
+    // If subscription exists and quota is exceeded, reject (unless dev bypass)
+    if (!devBypass && subscription && subscription.missions_used >= subscription.missions_quota) {
       console.log(
         `[Mach Missions] Quota exceeded for user ${req.user.id}: ${subscription.missions_used}/${subscription.missions_quota}`,
       );

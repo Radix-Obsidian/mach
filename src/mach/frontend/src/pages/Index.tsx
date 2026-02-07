@@ -43,8 +43,10 @@ const Index = () => {
     await createMission(objective, options);
   };
 
-  // Show card when mission exists AND status is complete or failed
-  const showCard = mission && (mission.status === "complete" || mission.status === "failed");
+  // Show card when mission exists AND status is a terminal state
+  const showCard =
+    mission &&
+    (mission.status === "complete" || mission.status === "failed" || mission.status === "rejected");
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
