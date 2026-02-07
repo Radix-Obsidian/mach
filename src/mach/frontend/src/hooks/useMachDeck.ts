@@ -33,6 +33,8 @@ export function useMachDeck() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const subscriptionRef = useRef<ReturnType<typeof supabase.channel> | null>(null);
+  // Echo guard: track card IDs currently being position-updated by the local user
+  const positionUpdatePendingRef = useRef<Set<string>>(new Set());
 
   const fetchDeck = useCallback(async () => {
     try {
@@ -115,7 +117,19 @@ export function useMachDeck() {
         },
         (payload) => {
           const updatedCard = payload.new as CanvasCard;
-          setCards((prev) => prev.map((c) => (c.id === updatedCard.id ? updatedCard : c)));
+          // If this card is being position-updated locally, only merge non-position fields
+          // to prevent the echo from clobbering the user's drag result
+          if (positionUpdatePendingRef.current.has(updatedCard.id)) {
+            setCards((prev) =>
+              prev.map((c) =>
+                c.id === updatedCard.id
+                  ? { ...updatedCard, position_x: c.position_x, position_y: c.position_y }
+                  : c,
+              ),
+            );
+          } else {
+            setCards((prev) => prev.map((c) => (c.id === updatedCard.id ? updatedCard : c)));
+          }
         },
       )
       .subscribe();
@@ -155,6 +169,9 @@ export function useMachDeck() {
   };
 
   const updateCardPosition = async (cardId: string, x: number, y: number) => {
+    // Mark as pending BEFORE the PATCH to suppress incoming echo
+    positionUpdatePendingRef.current.add(cardId);
+
     // Optimistic update first
     setCards((prev) =>
       prev.map((c) => (c.id === cardId ? { ...c, position_x: x, position_y: y } : c)),
@@ -181,6 +198,11 @@ export function useMachDeck() {
       setError(message);
       // Revert on failure
       fetchDeck();
+    } finally {
+      // Delay removal to let the Supabase echo pass through
+      setTimeout(() => {
+        positionUpdatePendingRef.current.delete(cardId);
+      }, 500);
     }
   };
 
@@ -217,6 +239,43 @@ export function useMachDeck() {
     }
   };
 
+  const roastDeck = async (criteria: {
+    max_entropy?: number;
+    max_age_days?: number;
+    min_confidence?: number;
+  }): Promise<{ deleted_count: number; cards_deleted: string[] }> => {
+    try {
+      const { data: sessionData } = await supabase.auth.getSession();
+      if (!sessionData?.session) throw new Error("Not authenticated");
+
+      const apiBase = import.meta.env.VITE_API_BASE || "http://localhost:8080";
+      const response = await fetch(`${apiBase}/api/deck/cards/stale`, {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${sessionData.session.access_token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(criteria),
+      });
+
+      if (!response.ok) throw new Error("Failed to roast deck");
+
+      const result = await response.json();
+
+      // Remove roasted cards from local state
+      if (result.cards_deleted?.length > 0) {
+        setCards((prev) => prev.filter((c) => !result.cards_deleted.includes(c.id)));
+      }
+
+      return result;
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to roast deck";
+      console.error("[useMachDeck] Roast error:", message);
+      setError(message);
+      return { deleted_count: 0, cards_deleted: [] };
+    }
+  };
+
   return {
     canvas,
     cards,
@@ -225,6 +284,7 @@ export function useMachDeck() {
     deleteCard,
     updateCardPosition,
     addCard,
+    roastDeck,
     refresh: fetchDeck,
   };
 }
